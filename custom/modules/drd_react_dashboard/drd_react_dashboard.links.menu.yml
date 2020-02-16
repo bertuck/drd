@@ -1,0 +1,6 @@
+drd_react_dashboard.configuration:
+  title: 'React Dashboard'
+  description: 'React dashboard'
+  route_name: drd_react_dashboard.view
+  parent: 'system.admin'
+  weight: 100

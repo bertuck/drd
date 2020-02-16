@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Styling for drd_react_dashboard toolbar module.
+ */
+
+.toolbar-icon-drd-react-dashboard-configuration:before{
+    background-image: url(icons/cog.svg);
+}
+
+
+.toolbar-icon-drd-react-dashboard-configuration:active:before,
+.toolbar-icon-drd-react-dashboard-configuration.is-active:before {
+    background-image: url(icons/cog.svg);
+}

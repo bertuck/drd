@@ -1,1 +1,8 @@
 <?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function drd_react_dashboard_page_attachments(array &$attachments) {
+    $attachments['#attached']['library'][] = 'drd_react_dashboard/toolbar';
+}
