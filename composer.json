@@ -1,5 +1,5 @@
 {
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
@@ -9,6 +9,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://bertuck.github.io/repo-composer"
         }
     ],
     "require": {
@@ -71,7 +75,10 @@
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/addtoany": "^1.12",
         "drupal/flag": "4.0-beta1",
-        "drupal/cool_message": "^2.0"
+        "drupal/cool_message": "^2.0",
+        "drupal_kb_modules/kb_entity_browser": "^8.1.1",
+        "drupal_kb_modules/kb_error_pages": "^8.1.0",
+        "drupal_kb_modules/kb_ckeditor": "^8.1.0"
     },
     "require-dev": {
         "drupal/devel": "^2.0",
@@ -81,6 +88,9 @@
         "drupal/drupal-extension": "~3.0",
         "phpunit/phpunit": "^7.5",
         "phpstan/phpstan": "^0.11"
+    },
+    "config": {
+        "secure-http": false
     },
     "scripts": {
         "post-install-cmd": [

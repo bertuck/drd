@@ -258,7 +258,7 @@ $databases['default']['default'] = array(
  *   );
  * @endcode
  */
-$config_directories = array(CONFIG_SYNC_DIRECTORY => 'config/sync');
+$config_directories = array('sync' => 'config/sync');
 
 /**
  * Settings:
@@ -285,7 +285,7 @@ $config_directories = array(CONFIG_SYNC_DIRECTORY => 'config/sync');
  *   service requires the install profile use the 'install_profile' container
  *   parameter. Functional code can use \Drupal::installProfile().
  */
-$settings['install_profile'] = 'standard';
+$settings['install_profile'] = 'config_installer';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.

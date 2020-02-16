@@ -94,7 +94,7 @@ update-db-configuration: ## ## Update database configuration
 	$(drush) cr
 
 bootstrap-database: ## ## Create database schema from scratch
-	$(drush) si -y --site-name=${PROJECT_NAME} --account-pass=admin config_installer
+	$(drush) si -y --account-pass=admin config_installer -vvv
 	$(drush) cim -y
 
 tests: coding_standard behat blackfire security-checker ## ## Execute all tests
@@ -107,7 +107,10 @@ fix_coding_standard: ## ## Fix Drupal Coding Standard
 	$(php) vendor/bin/phpcbf --runtime-set installed_paths drupal/modules/contrib/coder/coder_sniffer --standard=Drupal --ignore=custom/sites/default/files --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md custom/
 	$(php) vendor/bin/phpcbf --runtime-set installed_paths drupal/modules/contrib/coder/coder_sniffer --standard=DrupalPractice --ignore=custom/sites/default/files --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md custom/
 
-assets: gulp ## ## Generate assets
+install-theme:
+	$(npm) install --prefix ./static-builder/
+
+assets: install-theme gulp ## ## Generate assets
 
 gulp: ## [CMD=] ## Execute gulp
 	$(node) static-builder/node_modules/.bin/gulp --cwd=static-builder/ $(filter-out $@,${CMD})

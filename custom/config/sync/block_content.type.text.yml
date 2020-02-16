@@ -1,0 +1,8 @@
+uuid: 69f07ad1-2ac7-4f03-a436-d9612649821e
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Texte
+revision: 0
+description: ''

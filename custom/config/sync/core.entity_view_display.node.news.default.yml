@@ -20,9 +20,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  flag_greenclap:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  langcode: true
