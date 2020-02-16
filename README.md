@@ -26,7 +26,7 @@ make reinstall-from-scratch
 
 ### First steps
 
-- Copy the httpd ip container from your terminal (```make ips```) and go to your browser
+- Copy the host ```http://<project_name>.local``` and go to your browser
 - Go to /user/login, login as admin/admin and go to admin/config/development/generate/content
 - Generate 100 News, Articles and Basic Pages
 - Go to /dashboard
@@ -36,7 +36,7 @@ make reinstall-from-scratch
 
 | Target  | Description |
 |------|-------------|
-| SITE LOCAL| http://<project_name>.localhost:8083 | 
+| SITE LOCAL| http://<project_name>.local | 
 
 
 ## Need a command ?
