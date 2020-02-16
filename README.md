@@ -1,4 +1,6 @@
-# DRD
+# DRD - Drupal React Dashboard
+
+It's a React Dashboard included into a custom Drupal 8.
 
 - Docker Drupal stack (httpd 2.4, php 7.3, mysql 5.6, node 10.16)
 - Drupal stack (default config, modules, meterial_admin, front_theme, composer.json)
@@ -44,5 +46,5 @@ make help
 ```
 
 
-## Contributors
+## Contributor
  - [Kenni Bertucat](https://github.com/bertuck) - DEVELOPER FULLSTACK
