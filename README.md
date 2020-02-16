@@ -5,7 +5,6 @@
 - Drupal custom front theme (preprocess engine, access forms, gulp stack, bootstrap4)
 - React JS Dashboard application link to theme (/dashboard)
 - Makefile with custom commands, forced to be used
-- Documentation (how to use)
 - Tools : Makefile / composer / drush / npm / gulp / parcel
 - OS : CentOS Linux 7
 - Languages/Frameworks : PHP7, MySQL, JS (ES6, ES7), ReactJS, JQuery, Drupal (Symfony 2), CSS3, HTML5, Bootstrap4
