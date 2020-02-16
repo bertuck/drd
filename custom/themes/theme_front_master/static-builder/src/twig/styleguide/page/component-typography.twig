@@ -1,0 +1,62 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Typography Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Typography</h2> 
+{% endblock %}
+
+{% block main %}
+
+    {% include "../component/typography/typography.twig" %}
+    {% set path_code = '../../component/typography/typography.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Typography-utilities">Typography utilities</h2>
+    {% include "../component/typography/utilities.twig" %}
+    {% set path_code = '../../component/typography/utilities.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Lists">Lists</h2>
+    {% include "../component/typography/lists.twig" %}
+    {% set path_code = '../../component/typography/lists.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Font-icon">Font-icon</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Mise en place d'un icône accessible via une sémantique HTML.
+                <br>
+                <code>&lt;span class="icon-[nomDeLicone]" aria-hidden="true"&gt;&lt;/span&gt;</code>
+            </p>
+            <p>
+                Si vous avez un texte à cacher, il faut le faire de façon accessible, c-a-d :
+                <br>
+                <code>&lt;div class="foo"&gt;&lt;span class="icon-[nomDeLicone]" aria-hidden="true"&gt;&lt;/span&gt;&lt;span class="sr-only"&gt;Mon texte à cacher&lt;/span&gt;&lt;/div&gt;</code>
+            </p>
+            <h4 class="mb-0">Note sur le composant :</h4>
+            <p>Le &lt;span class="icon-name"&gt; est là pour le guide de style uniquement. Il ne doit pas être repris dans le developpement</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/typography/fonticon.twig" %}
+    {% set path_code = '../../component/typography/fonticon.twig' %}
+    {% set collapse_id = '03' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Spacer">Spacer</h2>
+    {% include "../component/typography/spacer.twig" %}
+    {% set path_code = '../../component/typography/spacer.twig' %}
+    {% set collapse_id = '04' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

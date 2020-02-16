@@ -1,0 +1,54 @@
+<div class="header-account dropdown">
+    <button class="btn btn-account" type="button" id="dropdownAccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="icon icon-user" aria-hidden="true"></span>
+        {% if account_firstname is empty and account_lastname is empty %}
+            <span class="btn-account-text">{{ "Mon compte" | t }}</span>
+        {% else %}
+            <span class="btn-account-text">{{ account_firstname | capitalize }} {{ account_lastname | upper }}</span>
+        {% endif %}
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-right dropdown-menu-account" aria-labelledby="dropdownAccount">
+        {% import _self as menus %}
+
+        {{ menus.menu_links(items, attributes, 0, account_login, account_register) }}
+
+        {% macro menu_links(items, attributes, menu_level, account_login, account_register) %}
+        {% import _self as menus %}
+        {% if items %}
+        {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('menu menu-account') }}>
+            {% else %}
+            <ul class="menu">
+                {% endif %}
+                {% for item in items %}
+                    {%
+                        set classes = [
+                        'menu-item',
+                        item.is_expanded ? 'menu-item--expanded',
+                        item.is_collapsed ? 'menu-item--collapsed',
+                        item.in_active_trail ? 'menu-item--active-trail',
+                        'menu-account-item'
+                    ]
+                    %}
+                    <li{{ item.attributes.addClass(classes) }}>
+                        {{ link(item.title, item.url) }}
+                        {% if item.below %}
+                            {{ menus.menu_links(item.below, attributes, menu_level + 1, account_login, account_register) }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <ul{{ attributes.addClass('menu menu-account') }}>
+                    <li class="menu-item menu-account-item">
+                        {{ account_login }}
+                    </li>
+                    <li class="menu-item menu-account-item">
+                        {{ account_register |raw }}
+                    </li>
+                </ul>
+            {% endif %}
+            {% endmacro %}
+    </div>
+</div>

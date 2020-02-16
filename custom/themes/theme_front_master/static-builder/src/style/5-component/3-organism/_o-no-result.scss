@@ -1,0 +1,26 @@
+.o-no-result {
+    max-width: 73rem;
+    margin: auto;
+    padding: $landing-section-spacing-y 0;
+    display: flex;
+    align-items: center;
+    color: $brand-2;
+    font-size: 1.8rem;
+
+    p {
+        margin-bottom: 0;
+        margin-left: 3.6rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .o-no-result {
+        padding: $landing-section-spacing-y-md 0;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .o-no-result {
+        padding: $landing-section-spacing-y-xl 0;
+    }
+}

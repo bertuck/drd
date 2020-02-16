@@ -1,0 +1,73 @@
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-target="#modalAddDoc" data-toggle="modal" type="button">
+    Modal ajouter un nouveau document - étape 0
+</button>
+
+<button class="btn btn-primary" data-target="#modalAddDoc01" data-toggle="modal" type="button">
+    Modal ajouter un nouveau document - étape 1
+</button>
+
+<button class="btn btn-primary" data-target="#modalAddDoc02" data-toggle="modal" type="button">
+    Modal ajouter un nouveau document - étape 2
+</button>
+
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="modalAddDocLabel" class="modal fade" id="modalAddDoc" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-uppercase" id="modalAddDocLabel">Ajouter un nouveau document</h2>
+
+                <button aria-label="Close" class="close btn-icon-left" data-dismiss="modal" type="button">
+                    <span class="icon-fermer" aria-hidden="true"></span>
+                    <span class="btn-text">Fermer</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {% include "../block/block-upload-and-drag-00.twig" %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="modalAddDoc01Label" class="modal fade" id="modalAddDoc01" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-uppercase" id="modalAddDoc01Label">Ajouter un nouveau document</h2>
+
+                <button aria-label="Close" class="close btn-icon-left" data-dismiss="modal" type="button">
+                    <span class="icon-fermer" aria-hidden="true"></span>
+                    <span class="btn-text">Fermer</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {% include "../block/block-upload-and-drag-01.twig" %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="modalAddDoc02Label" class="modal fade" id="modalAddDoc02" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-uppercase" id="modalAddDoc02Label">Ajouter un nouveau document</h2>
+
+                <button aria-label="Close" class="close btn-icon-left" data-dismiss="modal" type="button">
+                    <span class="icon-fermer" aria-hidden="true"></span>
+                    <span class="btn-text">Fermer</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {% include "../block/block-upload-and-drag-02.twig" %}
+
+            </div>
+        </div>
+    </div>
+</div>

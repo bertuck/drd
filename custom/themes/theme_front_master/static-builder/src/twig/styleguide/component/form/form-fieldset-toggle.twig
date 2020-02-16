@@ -1,0 +1,288 @@
+<div class="block-bordered border">
+    <h2 class="text-uppercase">Nouvel enfant</h2>
+
+    <p class="small">Les champs marqués d'un <span class="text-danger">*</span> sont obligatoires</p>
+
+    <form>
+        <fieldset>
+            <legend class="h6 text-secondary text-uppercase">Informations sur l'enfant (desktop version)</legend>
+
+            <div class="form-group">
+                <div class="float-target-parent">
+                    <label for="exampleFormControlInputText1">Input text</label>
+                    <input type="text" class="form-control float-target" id="exampleFormControlInputText1">
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                {# include "../input-group/input-group-2.twig" #}
+                <div class="form-group col-md-9 col-lg-12 col-xl-9 required">
+                    <div class="input-group float-target-parent">
+                        <input type="text" class="form-control float-target" id="inputAppend06" aria-describedby="input-group-addon6" required>
+                        <label for="inputAppend06">Date de naissance (JJ/MM/AAAA)</label>
+
+                        <div class="input-group-append">
+                            <button type="button" class="btn input-group-text" id="input-group-addon6">
+                                <span class="icon-calendrier" aria-hidden="true"></span>
+                                <span class="sr-only">Ouvrir le datepicker</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    {% include "../datepicker/datepicker.twig" %}
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <div class="float-target-parent">
+                        <label for="lieuNaissance">Lieu de naissance</label>
+                        <input type="text" class="form-control float-target" id="lieuNaissance">
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="paysNaissance" class="sr-only">Pays de naissance</label>
+                    <select class="form-control" id="paysNaissance">
+                        <option>Pays</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+
+            {% include "../popover/popover-form.twig" %}
+
+            <div class="form-row">
+                <div class="form-group col-md-4 form-group-invalid">
+                    <div class="float-target-parent focused">
+                        <label for="codePostal">Code postal</label>
+                        <input type="text" class="form-control float-target is-invalid" id="codePostal" aria-describedby="invalid01" value="75345">
+                    </div>
+                    <div class="invalid-feedback" id="invalid01">
+                        <p>Code postal non reconnu</p>
+                    </div>
+                </div>
+                <div class="form-group col-md-8">
+                    <div class="float-target-parent focused">
+                        <label for="commune">Commune</label>
+                        <input type="text" class="form-control float-target is-valid" id="commune" value="PARIS">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend class="h6 text-secondary text-uppercase">
+                <button type="button" class="btn btn-actions btn-toggle-collapse btn-form-collapse" data-toggle="collapse" data-target="#reprEnfant01" aria-expanded="true" aria-controls="reprEnfant01">
+                    Les représentants légaux de l'enfant 2 (mobile version)
+                    <span class="icon-chevron-down" aria-hidden="true"></span>
+                </button>
+            </legend>
+
+            <div class="collapse show" id="reprEnfant01">
+                <fieldset>
+                    <legend class="h6 with-dot mb-2">Représentant légal 1 de l'enfant 2</legend>
+
+                    <fieldset>
+                        <legend class="mb-2">L'adresse du représentant légal 1 est-elle la même que celle de John Doe ?</legend>
+
+                        <div class="form-group mb-2">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="repr01-customRadioInline1" name="repr01-customRadioInline1" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="repr01-customRadioInline1">Oui</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="repr01-customRadioInline2" name="repr01-customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="repr01-customRadioInline2">Non</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <div class="float-target-parent">
+                            <label for="repr01-mail">Adresse email du représentant légal 1</label>
+                            <input type="email" class="form-control float-target" id="repr01-mail">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="h6 with-dot mb-2">Représentant légal 2 de l'enfant 2</legend>
+
+                    <fieldset>
+                        <legend class="mb-2">L'adresse du représentant légal 2 est-elle la même que celle du représentant légal 1 ?</legend>
+
+                        <div class="form-group mb-2">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="repr02-customRadioInline1" name="repr02-customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="repr02-customRadioInline1">Oui</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="repr02-customRadioInline2" name="repr02-customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="repr02-customRadioInline2">Non</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <div class="float-target-parent">
+                            <label for="repr02-mail">Adresse email du représentant légal 2</label>
+                            <input type="email" class="form-control float-target" id="repr02-mail">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend class="h6 text-secondary text-uppercase">
+                <button type="button" class="btn btn-actions btn-toggle-collapse btn-form-collapse" data-toggle="collapse" data-target="#prestEnfant01" aria-expanded="false" aria-controls="prestEnfant01">
+                    Prestation(s) de l'enfant (mobile version)
+                    <span class="icon-chevron-down" aria-hidden="true"></span>
+                </button>
+            </legend>
+
+            <div class="collapse collapse-mx-negative" id="prestEnfant01">
+                <div class="block-bordered block-bordered-prestation bg-lighter">
+                    <fieldset>
+                        <legend class="h6 with-dot">Prestation 01</legend>
+
+                        <div class="form-group">
+                            <div class="float-target-parent">
+                                <label for="prestation01-name">Titre de la prestation</label>
+                                <input type="text" class="form-control float-target" id="prestation01-name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            {# include "../input-group/input-group-2.twig" #}
+                            <div class="form-group col-md-6 col-xxl-4">
+                                <div class="input-group float-target-parent">
+                                    <input type="text" class="form-control float-target" id="prestation01-du" aria-describedby="prestation01-du-desc">
+                                    <label for="prestation01-du">Du</label>
+
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn input-group-text" id="prestation01-du-desc">
+                                            <span class="icon-calendrier" aria-hidden="true"></span>
+                                            <span class="sr-only">Ouvrir le datepicker</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# include "../input-group/input-group-2.twig" #}
+                            <div class="form-group col-md-6 col-xxl-4">
+                                <div class="input-group float-target-parent">
+                                    <input type="text" class="form-control float-target" id="prestation01-au" aria-describedby="prestation01-au-desc">
+                                    <label for="prestation01-au">Au</label>
+
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn input-group-text" id="prestation01-au-desc">
+                                            <span class="icon-calendrier" aria-hidden="true"></span>
+                                            <span class="sr-only">Ouvrir le datepicker</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 col-xxl-4">
+                                <div class="float-target-parent">
+                                    <label for="prestation01-montant">Montant</label>
+                                    <input type="text" class="form-control float-target" id="prestation01-montant">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-icon-left btn-pos-right">
+                            <span class="icon-fermer" aria-hidden="true"></span>Supprimer <span class="sr-only">Prestation 01</span>
+                        </button>
+                    </fieldset>
+                </div>
+
+                <div class="block-bordered block-bordered-prestation">
+                    <fieldset>
+                        <legend class="h6 with-dot">Prestation 02</legend>
+
+                        <div class="form-group">
+                            <div class="float-target-parent">
+                                <label for="prestation02-name">Titre de la prestation</label>
+                                <input type="text" class="form-control float-target" id="prestation02-name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            {# include "../input-group/input-group-2.twig" #}
+                            <div class="form-group col-md-6 col-xxl-4">
+                                <div class="input-group float-target-parent">
+                                    <input type="text" class="form-control float-target" id="prestation02-du" aria-describedby="prestation02-du-desc">
+                                    <label for="prestation02-du">Du</label>
+
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn input-group-text" id="prestation02-du-desc">
+                                            <span class="icon-calendrier" aria-hidden="true"></span>
+                                            <span class="sr-only">Ouvrir le datepicker</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {# include "../input-group/input-group-2.twig" #}
+                            <div class="form-group col-md-6 col-xxl-4">
+                                <div class="input-group float-target-parent">
+                                    <input type="text" class="form-control float-target" id="prestation02-au" aria-describedby="prestation02-au-desc">
+                                    <label for="prestation02-au">Au</label>
+
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn input-group-text" id="prestation02-au-desc">
+                                            <span class="icon-calendrier" aria-hidden="true"></span>
+                                            <span class="sr-only">Ouvrir le datepicker</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 col-xxl-4">
+                                <div class="float-target-parent">
+                                    <label for="prestation02-montant">Montant</label>
+                                    <input type="text" class="form-control float-target" id="prestation02-montant">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-link btn-icon-left btn-pos-right">
+                            <span class="icon-fermer" aria-hidden="true"></span>Supprimer <span class="sr-only">Prestation 02</span>
+                        </button>
+                    </fieldset>
+                </div>
+
+                <div class="block-bordered block-bordered-prestation">
+                    <h3 class="block-recap--total">
+                        Montant du sous-total du dépôt&nbsp;: <span class="block-recap--total-nb">350€ <span>Trois cent cinquante euros</span></span>
+                    </h3>
+                </div>
+
+                <div class="block-bordered block-bordered-prestation">
+                    <div class="form-group mb-2">
+                        <button type="button" class="btn btn-link btn-icon-left">
+                            <span class="icon-ajouter" aria-hidden="true"></span>Ajouter une prestation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="btn-group justify-content-center d-flex">
+            <button type="submit" class="btn btn-secondary">Valider <span class="sr-only">le formulaire Nouvel enfant</span></button>
+        </div>
+    </form>
+</div>

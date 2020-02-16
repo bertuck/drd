@@ -1,0 +1,37 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Grid' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Grid</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>
+                La <a href="https://getbootstrap.com/docs/4.1/layout/grid/" target="_blank">grille de Bootstrap</a> est disponible.
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>Ces colonnes custom sont à utiliser sur certaines pages comme <a href="50.html" target="_blank">50.ecran accueil authentifie</a> et <a href="18.html" target="_blank">18.depot remuneration enfants_informations</a>.</p>
+        {% endblock %}
+    {% endembed %}
+
+    <div class="sg-grid">
+        {% include "../component/grid/grid.twig" %}
+    </div>
+    {% set path_code = '../../component/grid/grid.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

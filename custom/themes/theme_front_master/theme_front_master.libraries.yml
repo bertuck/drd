@@ -1,0 +1,25 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      static-builder/__public/site/style/style.css: {}
+      static-builder/__public/site/style/print.css: {}
+
+global-scripts:
+  version: 1.x
+  js:
+    static-builder/__public/site/script/app.js: {}
+
+react-dashboard-theme:
+  version: 1.x
+  css:
+    theme:
+      'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css': { scope: header, type: external }
+      'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css': { scope: header, type: external }
+      src/App/dist/styles.css : { preprocess: false, scope: header }
+
+react-dashboard-scripts:
+  header: false
+  version: 1.x
+  js:
+    src/App/dist/index.js : { preprocess: false }

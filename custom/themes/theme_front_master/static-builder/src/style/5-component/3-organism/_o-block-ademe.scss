@@ -1,0 +1,52 @@
+.o-block-ademe {
+    padding: $landing-section-spacing-y 0;
+}
+
+.o-block-ademe-img {
+    margin-bottom: 3rem;
+}
+
+.o-block-ademe-desc {
+    line-height: 1.4;
+    color: $gray-600;
+}
+
+@include media-breakpoint-up(md) {
+    .o-block-ademe {
+        padding: $landing-section-spacing-y-md 0;
+    }
+
+    .o-block-ademe-inner {
+        display: flex;
+        max-width: 77rem;
+        margin: auto;
+    }
+
+    .o-block-ademe-img {
+        flex: 0 0 21.5rem;
+        max-width: 21.5rem;
+        margin-right: $grid-gutter-width;
+        margin-bottom: 0;
+    }
+
+    .o-block-ademe-title {
+        float: left;
+        margin-top: 0.5rem;
+        margin-right: $grid-gutter-width;
+
+        img {
+            max-width: 12.4rem;
+        }
+    }
+
+    .o-block-ademe-action {
+        @include clearBefore;
+        margin-top: 2rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .o-block-ademe {
+        padding: $landing-section-spacing-y-xl 0 12rem 0;
+    }
+}

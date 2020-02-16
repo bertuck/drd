@@ -1,0 +1,10 @@
+ARG REGISTRY
+ARG APP_NAMESPACE
+
+# Development environment from node-base image
+FROM ${REGISTRY}/${APP_NAMESPACE}/node-base
+# Custom specifications for development environment
+## Add local user
+ARG USER_UID
+ARG USER_NAME
+RUN useradd ${USER_NAME} --uid ${USER_UID} -m || useradd ${USER_NAME} -m

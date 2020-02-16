@@ -1,0 +1,73 @@
+version: "3.6"
+
+services:
+  httpd:
+    image: "${REGISTRY}/${APP_NAMESPACE}/httpd-testing:${CI_COMMIT_REF_NAME}"
+    environment:
+      SERVICE_80_NAME: '${PROJECT_NAME}-testing'
+      SERVICE_80_TAGS: 'http-no-auth'
+      HTTPD__DocumentRoot: /var/www/html/drupal
+      HTTPD_a2enmod: 'rewrite status expires'
+      HTTPD__DirectoryIndex: 'index.php index.html'
+      HTTPD_Directory_AllowOverride: 'All'
+      HTTPD_Directory_Options: 'Indexes FollowSymLinks'
+      HTTPD__AddDefaultCharset: 'UTF-8'
+      # Set phpfpm
+      PHPFPM: 'php:9000'
+      PHPFPM_CONFIG: 'timeout=60 retry=5 ping=2'
+    ports:
+     - 80
+    depends_on:
+      - php
+
+  php:
+    image: "${REGISTRY}/${APP_NAMESPACE}/php-testing:${CI_COMMIT_REF_NAME}"
+    environment:
+      PHP__blackfire.agent_socket: 'tcp://blackfire:8707'
+      MYSQL_DATABASE: ${PROJECT_NAME}
+      MYSQL_USER: ${PROJECT_NAME}
+      MYSQL_PASSWORD: ${PROJECT_NAME}
+      MYSQL_HOST: "mysql"
+      SMTP: "smtp:25"
+      BEHAT_PARAMS: '{"extensions": {"Behat\\MinkExtension": {"base_url": "http://httpd"}}}'
+    depends_on:
+      - mysql
+
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PROJECT_NAME}
+      MYSQL_DATABASE: ${PROJECT_NAME}
+      MYSQL_USER: ${PROJECT_NAME}
+      MYSQL_PASSWORD: ${PROJECT_NAME}
+      MYSQLD__character-set-server: "utf8"
+      MYSQLD__max_allowed_packet: "128M"
+
+  smtp:
+    environment:
+      SERVICE_80_NAME: '${PROJECT_NAME}-testing-mailcatcher'
+      SERVICE_80_TAGS: 'http-no-auth'
+    ports:
+     - 80
+
+  blackfire:
+    image: blackfire/blackfire
+    environment:
+      BLACKFIRE_CLIENT_ID: '0802e77e-fa6a-4371-8aef-2e521373f436'
+      BLACKFIRE_CLIENT_TOKEN: '2716fb8c54d04a146874902ae3e61008c99e4007ffeaf672936e797fb03dbb9e'
+      BLACKFIRE_SERVER_ID: 'b9ae8cc3-b0e1-4a07-bacd-90a0fec41ebd'
+      BLACKFIRE_SERVER_TOKEN: '945fad6265ef4afc50fae42974917e3bf17c62c646f966a0c52f38b88c1c82bd'
+    depends_on:
+      - php
+
+  hubtesting:
+    image: selenium/hub:3.141.59-mercury
+    ports:
+      - 4444
+
+  chrometesting:
+    image: selenium/node-chrome:3.141.59-mercury
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=hubtesting
+      - HUB_PORT_4444_TCP_PORT=4444
+    depends_on:
+      - hubtesting

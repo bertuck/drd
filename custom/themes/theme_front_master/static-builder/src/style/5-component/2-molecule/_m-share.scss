@@ -1,0 +1,48 @@
+.m-share-list {
+    @include reset-list;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.m-share-button {
+    @include reset-btn;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+
+    font-size: 2.4rem;
+    text-decoration: none;
+
+    color: $body-color;
+
+    transition: color 250ms ease;
+
+    &.icon-envelope {
+        color: $blue;
+    }
+    &.icon-twitter {
+        color: $brand-twitter;
+    }
+    &.icon-facebook {
+        color: $brand-facebook;
+    }
+    &.icon-linkedin {
+        color: $brand-linkedin;
+    }
+
+    @include hover-focus-active {
+        text-decoration: none;
+        color: $body-color;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .m-share {
+        display: none;
+    }
+}

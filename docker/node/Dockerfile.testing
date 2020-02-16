@@ -1,0 +1,11 @@
+ARG REGISTRY
+ARG APP_NAMESPACE
+ARG BRANCH
+
+FROM ${REGISTRY}/${APP_NAMESPACE}/sources-dev:${BRANCH} as sources-dev
+# Testing environment from node-base image
+FROM ${REGISTRY}/${APP_NAMESPACE}/node-base:${BRANCH}
+# Custom specifications for testing environment
+## COPY builded sources files
+COPY --from=sources-dev --chown=node /var/www/html/custom /usr/src/app
+COPY --from=sources-dev --chown=node /var/www/html/tests /usr/src/tests

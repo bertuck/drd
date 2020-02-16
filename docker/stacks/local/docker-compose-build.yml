@@ -1,0 +1,33 @@
+version: "3.6"
+
+services:
+  httpd:
+    image: "${REGISTRY}/${APP_NAMESPACE}/httpd-local"
+    build:
+      context: ../../../
+      dockerfile: docker/httpd/Dockerfile.local
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+
+  php:
+    image: "${REGISTRY}/${APP_NAMESPACE}/php-local"
+    build:
+      context: ../../../
+      dockerfile: docker/php/Dockerfile.local
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+        USER_UID: ${LOCAL_UID}
+        USER_NAME: ${LOCAL_USERNAME}
+
+  node:
+    image: "${REGISTRY}/${APP_NAMESPACE}/node-local"
+    build:
+      context: ../../../
+      dockerfile: docker/node/Dockerfile.local
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+        USER_UID: ${LOCAL_UID}
+        USER_NAME: ${LOCAL_USERNAME}

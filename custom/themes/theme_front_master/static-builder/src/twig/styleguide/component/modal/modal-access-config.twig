@@ -1,0 +1,72 @@
+<div class="modal fade a11y-config" id="a11yModal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="a11yModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title" id="a11yModalLabel">Accessibilité
+                    <span>Configurer vos choix d'accessibilité</span>
+                </h1>
+                <button class="btn-close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true" class="icon-close"></span>
+                    <span class="btn-text">Fermer</span>
+                    <span class="access-hidden">Fermer la modale : accessibilité (configuration)</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <fieldset id="contrast-id">
+                    <legend>Contraste</legend>
+
+                    <div class="a11y-config--item">
+                        <input checked="checked" id="default-c" name="contrast" type="radio" value="default-c">
+                        <label for="default-c">Par défaut</label>
+                    </div>
+
+                    <div class="a11y-config--item">
+                        <input id="high-c" name="contrast" type="radio" value="high-c">
+                        <label for="high-c">Renforcé</label>
+                    </div>
+
+                    <div class="a11y-config--item">
+                        <input id="inv-c" name="contrast" type="radio" value="inv-c">
+                        <label for="inv-c">Inversé</label>
+                    </div>
+                </fieldset>
+
+                <fieldset id="font-id">
+                    <legend>Police (dyslexique)
+                    </legend>
+
+                    <div class="a11y-config--item">
+                        <input checked="checked" id="default-font" name="font" type="radio" value="default-font">
+                        <label for="default-font">Par défaut</label>
+                    </div>
+
+                    <div class="a11y-config--item">
+                        <input id="dys-font" name="font" type="radio" value="dys-font">
+                        <label for="dys-font">Adapté</label>
+                    </div>
+                </fieldset>
+
+                <fieldset id="line-space-id">
+                    <legend>Interlignage</legend>
+
+                    <div class="a11y-config--item">
+                        <input checked="checked" id="default-line-space" name="line-space" type="radio" value="default-line-space">
+                        <label for="default-line-space">Par défaut</label>
+                    </div>
+
+                    <div class="a11y-config--item">
+                        <input id="dys-line-space" name="line-space" type="radio" value="dys-line-space">
+                        <label for="dys-line-space">Augmenté</label>
+                    </div>
+                </fieldset>
+
+            </div>
+            <!-- / modal-body -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

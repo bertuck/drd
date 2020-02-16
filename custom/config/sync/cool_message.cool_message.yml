@@ -1,0 +1,8 @@
+coolmessage_enable: 1
+coolmessage_position: 0
+warning_color: '#eaaf51'
+error_color: '#de4343'
+status_color: '#61b832'
+info_color: '#4ea5cd'
+_core:
+  default_config_hash: D7-YrmL3iRhKLaOgYCcsoUapZc08MDYMotysa7igSF4

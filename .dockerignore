@@ -1,0 +1,20 @@
+# Drupal
+/drupal/
+/custom/sites/default/files/
+
+# Vendor
+/vendor/
+
+# Docker mysql initdb
+/docker/mysql/initdb
+
+# Git
+/.git/
+
+# Others
+/.template/
+/docs/
+/.project.env
+/.user.env
+/.gitlab-ci.yml
+/Makefile

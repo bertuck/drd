@@ -1,0 +1,147 @@
+[data-custompattern="carrousel"] {
+    margin: 0 auto;
+}
+
+// [data-custompattern="carrousel"] a {
+// }
+
+.carrousel-playpause {
+    margin: 0 auto;
+    text-align: right;
+}
+
+.carrousel-playpause button {
+    vertical-align: bottom;
+    padding: 1rem;
+
+    border: none;
+    background: none;
+
+    color: $black;
+}
+
+.carrousel-previousitem,
+.carrousel-nextitem  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+
+    width: 4rem;
+
+    text-align: center;
+
+    button {
+        @include reset-btn;
+
+        cursor: pointer;
+
+        display: block;
+
+        width: 4rem;
+        height: 4rem;
+
+        background-color: $white;
+
+        img {
+            height: 2.5rem;
+        }
+    }
+}
+
+.carrousel-previousitem {
+    left: 0;
+    right: auto;
+}
+
+.carrousel-nextitem {
+    left: auto;
+    right: 0;
+}
+
+// .carrousel-nextitem button {
+
+// }
+
+// .carrousel-previousitem button {
+
+// }
+
+.carrousel-previousitem button[disabled],
+.carrousel-nextitem button[disabled] {
+    cursor: default;
+    opacity: 0.5;
+}
+
+[data-custompattern="carrousel"] > [role="tablist"] {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    text-align: center;
+}
+
+[data-custompattern="carrousel"] > [role="tablist"] [role="tab"] {
+    cursor: pointer;
+
+    display: inline-block;
+    margin: 0;
+    padding: 0.5rem;
+
+    color: $white;
+}
+
+[data-custompattern="carrousel"] > [role="tablist"] [aria-selected="true"] {
+    color: #e5ecf8;
+    cursor: default;
+    font-weight: bold;
+}
+
+[data-custompattern="carrousel"] > [role="tablist"] ~ div {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+[data-custompattern="carrousel"] > [role="tablist"] ~ div > [role="tabpanel"] {
+    position: relative;
+
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+
+    width: 100%;
+    min-height: 20rem;
+
+    transition: left 0.5s ease-in;
+}
+
+[data-custompattern="carrousel"] > [role="tooltip"] {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    left: 1rem;
+    z-index: 1;
+
+    margin: 1rem 0 0 0;
+    padding: 1rem;
+
+    background-color: #2c5070;
+
+    border-radius: 0.6rem;
+
+    color: $white;
+    font-size: 1.4rem;
+    text-align: center;
+}

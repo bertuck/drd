@@ -1,0 +1,30 @@
+{
+  "name": "SKELETOR",
+  "version": "2.1.0",
+  "description": "SKELETOR - Gulp Theme",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "author": "Mathieu",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.6",
+    "cssnano": "^4.1",
+    "del": "^5.1",
+    "gulp": "^4.0",
+    "gulp-concat": "^2.6",
+    "gulp-embed-svg": "^1.1.6",
+    "gulp-postcss": "^8.0",
+    "gulp-sass": "^4.0",
+    "gulp-sourcemaps": "^2.6",
+    "gulp-twig": "^1.2",
+    "gulp-uglify": "^3.0",
+    "lighthouse": "^5.6",
+    "merge-stream": "^2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3",
+    "gulp-cli": "^2.2"
+  }
+}

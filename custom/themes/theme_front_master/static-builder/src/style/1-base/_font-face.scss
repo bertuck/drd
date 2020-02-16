@@ -1,0 +1,500 @@
+// Font-face
+// =============================================
+
+// 1. passer le setting `$enable-fontface` à `true`.
+$enable-fontface: true;
+
+// 2. déclarer la "map" des fontes utilisées
+$fonts-map-lato: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'lato': (
+        (
+            'font-path'    : "lato/lato-black",
+            'font-weight'  : 900,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-blackitalic",
+            'font-weight'  : 900,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-bold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-bolditalic",
+            'font-weight'  : 700,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-italic",
+            'font-weight'  : 400,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "lato/lato-lightitalic",
+            'font-weight'  : 300,
+            'font-style'   : italic,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-montserrat: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'montserrat': (
+        (
+            'font-path'    : "montserrat/montserrat-black",
+            'font-weight'  : 900,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-black-italic",
+            'font-weight'  : 900,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-extra-bold",
+            'font-weight'  : 800,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-extra-bold-italic",
+            'font-weight'  : 800,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-bold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-bold-italic",
+            'font-weight'  : 700,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-semi",
+            'font-weight'  : 600,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-semi-italic",
+            'font-weight'  : 600,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-medium",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-medium-italic",
+            'font-weight'  : 500,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-italic",
+            'font-weight'  : 400,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-light-italic",
+            'font-weight'  : 300,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-extra-light",
+            'font-weight'  : 200,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "montserrat/montserrat-extra-light-italic",
+            'font-weight'  : 200,
+            'font-style'   : italic,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-raleway: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'raleway': (
+        (
+            'font-path'    : "raleway/raleway-black",
+            'font-weight'  : 900,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-blackitalic",
+            'font-weight'  : 900,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-extrabold",
+            'font-weight'  : 800,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-extrabolditalic",
+            'font-weight'  : 800,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-bold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-bolditalic",
+            'font-weight'  : 700,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-semibold",
+            'font-weight'  : 600,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-semibolditalic",
+            'font-weight'  : 600,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-bold",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-bolditalic",
+            'font-weight'  : 500,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-italic",
+            'font-weight'  : 400,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "raleway/raleway-lightitalic",
+            'font-weight'  : 300,
+            'font-style'   : italic,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-opensans: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'opensans': (
+        (
+            'font-path'    : "opensans/opensans-extrabold",
+            'font-weight'  : 800,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-extrabolditalic",
+            'font-weight'  : 800,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-bold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-bolditalic",
+            'font-weight'  : 700,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-semibold",
+            'font-weight'  : 600,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-semibolditalic",
+            'font-weight'  : 600,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-bold",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-bolditalic",
+            'font-weight'  : 500,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-italic",
+            'font-weight'  : 400,
+            'font-style'   : italic,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "opensans/opensans-lightitalic",
+            'font-weight'  : 300,
+            'font-style'   : italic,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-oswald: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'oswald': (
+        (
+            'font-path'    : "oswald/oswald-bold",
+            'font-weight'  : 800,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-semibold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-bold",
+            'font-weight'  : 600,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-medium",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "oswald/oswald-extralight",
+            'font-weight'  : 200,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-robotoslab: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'robotoslab': (
+        (
+            'font-path'    : "robotoslab/robotoslab-bold",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "robotoslab/robotoslab-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "robotoslab/robotoslab-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "robotoslab/robotoslab-thin",
+            'font-weight'  : 200,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-roboto: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'roboto': (
+        (
+            'font-path'    : "roboto/roboto-bold",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "roboto/roboto-medium",
+            'font-weight'  : 500,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "roboto/roboto-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "roboto/roboto-light",
+            'font-weight'  : 300,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-dosis: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'dosis': (
+        (
+            'font-path'    : "dosis/dosis-semibold",
+            'font-weight'  : 600,
+            'font-style'   : normal,
+            'font-display' : swap
+        ),
+        (
+            'font-path'    : "dosis/dosis-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-museo: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'museo': (
+        (
+            'font-path'    : "museo/Museo700",
+            'font-weight'  : 700,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+$fonts-map-opendyslexic: (
+    // sera utilisé comme valeur pour la font-family de ce groupe
+    'opendyslexic': (
+        (
+            'font-path'    : "opendys/opendyslexic-regular",
+            'font-weight'  : 400,
+            'font-style'   : normal,
+            'font-display' : swap
+        )
+    )
+);
+
+// 3. définir le chemin vers le répertoire des webfontes
+$webfont-path: "../font/";
+
+// mixin
+@import '../0-mixin/mixin-font-face';
+
+// Font-face declarations
+@if ($enable-fontface) {
+    // @include sc-import-fonts($fonts-map-lato);
+    // @include sc-import-fonts($fonts-map-montserrat);
+    // @include sc-import-fonts($fonts-map-raleway);
+    // @include sc-import-fonts($fonts-map-opensans);
+    // @include sc-import-fonts($fonts-map-oswald);
+    // @include sc-import-fonts($fonts-map-robotoslab);
+    @include sc-import-fonts($fonts-map-roboto);
+    // @include sc-import-fonts($fonts-map-dosis);
+    // @include sc-import-fonts($fonts-map-opendyslexic);
+    @include sc-import-fonts($fonts-map-museo);
+}

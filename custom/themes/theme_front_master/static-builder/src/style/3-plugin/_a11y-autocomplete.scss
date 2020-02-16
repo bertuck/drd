@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+// .invisible 
+// {
+//     border: 0;
+//     clip: rect(0 0 0 0);
+//     height: 0.1rem;
+//     margin: -0.1rem;
+//     overflow: hidden;
+//     padding: 0;
+//     position: absolute;
+//     width: 0.1rem;
+// }
+
+.combobox-container 
+{
+    position: relative;
+    // max-width: 250px;
+    // margin: 0 auto;
+}
+
+.combobox-suggestions 
+{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+
+    width: 100%;
+
+    // padding: 1rem;
+
+    // border: 0.1rem solid $gray-200;
+    // border-radius: 0.3rem;
+    // box-shadow: 0 0.4rem 0.6rem #a0a0a0;
+
+    background-color: $white;
+}
+
+.combobox-suggestion 
+{
+    cursor: pointer;
+    
+    padding: 0.8rem 1rem;
+
+    border-bottom: 0.1rem solid $gray-200;
+    border-left: 0.1rem solid $gray-200;
+    border-right: 0.1rem solid $gray-200;
+
+    background-color: $white;
+
+    font-size: 1.4rem;
+    color: $access-color;
+    text-align: left;
+
+    transition: background-color 0.3s ease;
+
+    @include hover
+    {
+        background-color: $gray-200;
+    }
+
+    &:first-child 
+    {
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+
+        border-top: 0.1rem solid $gray-200;
+    }
+
+    &:last-child 
+    {
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+}
+
+.combobox-clear-button 
+{
+    position: absolute;
+    right: 1rem;
+    top: 0.8rem;
+
+    margin: 0;
+    padding: 0;
+    
+    width: 2.5rem;
+    height: 2.5rem;
+    
+    border: 0.1rem solid $gray-200;
+    border-radius: 100%;
+    
+    background-color: $white;
+    
+    color: $black;
+    font-family: inherit;
+    font-size: 1rem;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    @include hover
+    {
+        background-color: $gray-200;
+    }
+
+    @include active
+    {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+// http://geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html
+.js-combobox[type=text]::-ms-clear { display: none; width: 0; height: 0; }
+.js-combobox[type=text]::-ms-reveal { display: none; width: 0; height: 0; }

@@ -1,0 +1,51 @@
+{% set name = (name|default("Your Website Name")) %}
+{% set title = (title|default("")) %}
+{% set bodyclass = (bodyclass|default("")) %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Skeletor - Framework CSS / JS">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    {% include "./partials/script-top.twig" %}
+
+    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <link rel="stylesheet" href="./style/print.css" type="text/css" media="print" />
+
+    {% block styles_more %}{% endblock %}
+
+    <title>{% if title %}{{ title }} | {% endif %}{{ name }}</title>
+  </head>
+
+  <body>
+
+    <div class="body-wrapper{% if bodyclass %} {{ bodyclass }}{% endif %}" id="top">
+
+        {% block header %}{% endblock %}
+
+        <main id="main" class="main" role="main">
+
+            {% block main %}{% endblock %}
+
+            <a href="#top" class="scroll-to-top a-scroll-top">
+                <span class="access-hidden">Haut de page</span>
+            </a>
+
+        </main>
+
+        {% block footer %}{% endblock %}
+
+        {% block modal %}{% endblock %}
+
+    </div>
+    <!-- / body-wrapper -->
+
+    {% include "./partials/script-bottom.twig" %}
+    {% block scripts_more %}{% endblock %}
+
+  </body>
+</html>

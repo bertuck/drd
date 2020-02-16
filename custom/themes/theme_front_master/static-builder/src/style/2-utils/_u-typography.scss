@@ -1,0 +1,88 @@
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (min-width: 36em) {
+    .text-sm-left {
+        text-align: left;
+    }
+    .text-sm-right {
+        text-align: right;
+    }
+    .text-sm-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 48em) {
+    .text-md-left {
+        text-align: left;
+    }
+    .text-md-right {
+        text-align: right;
+    }
+    .text-md-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 62em) {
+    .text-lg-left {
+        text-align: left;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+    .text-lg-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 75em) {
+    .text-xl-left {
+        text-align: left;
+    }
+    .text-xl-right {
+        text-align: right;
+    }
+    .text-xl-center {
+        text-align: center;
+    }
+}
+
+.text-strong{ font-weight: 600; }
+
+.text-lowercase { text-transform: lowercase; }
+
+.text-uppercase { text-transform: uppercase; }
+
+.no-text-lowercase,
+.no-text-uppercase,
+.no-text-capitalize {
+    text-transform: none;
+}
+
+.ftz12{ font-size: 1.2rem; }
+.ftz14{ font-size: 1.4rem; }
+.ftz16{ font-size: 1.6rem; }
+.ftz18{ font-size: 1.8rem; }
+.ftz20{ font-size: 2rem; }
+.ftz22{ font-size: 2.2rem; }
+.ftz24{ font-size: 2.4rem; }
+.ftz26{ font-size: 2.6rem; }
+.ftz28{ font-size: 2.8rem; }
+.ftz30{ font-size: 3rem; }
+
+.text-primary{ color: $primary-color; }
+.text-secondary{ color: $secondary-color; }
+
+.text-black{ color: $black; }
+.text-white{ color: $white; }

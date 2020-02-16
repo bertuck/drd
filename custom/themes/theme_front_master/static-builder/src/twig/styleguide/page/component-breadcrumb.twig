@@ -1,0 +1,52 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Breadcrumb Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Breadcrumb</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Sur la nav mettre un role <code>aria-label="Fil d'ariane"</code>
+                <br>
+                Sur l'item <code>&lt;li&gt;</code> complété, il faut ajouter la class <code>complete</code>
+                <br>
+                Sur l'item <code>&lt;li&gt;</code> en cours, il faut ajouter la class <code>active</code> et ajouter un attribut <code>aria-current="page"</code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/breadcrumb/breadcrumb.twig" %}
+    {% set path_code = '../../component/breadcrumb/breadcrumb.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Steplist</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Sur l'item <code>&lt;li&gt;</code> complété, il faut ajouter la class <code>complete</code>
+                <br>
+                Sur l'item <code>&lt;li&gt;</code> en cours, il faut ajouter la class <code>active</code> et ajouter un attribut <code>aria-current="step"</code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/breadcrumb/steplist.twig" %}
+    {% set path_code = '../../component/breadcrumb/steplist.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

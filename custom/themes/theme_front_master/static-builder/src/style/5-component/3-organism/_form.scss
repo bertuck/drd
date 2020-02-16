@@ -1,0 +1,124 @@
+.form-description {
+    margin-bottom: 3.5rem;
+    color: $gray-600;
+}
+
+label {
+    font-size: $label-font-size;
+    font-family: $font-family-museo;
+    text-transform: uppercase;
+
+    color: $primary;
+
+    .small {
+        text-transform: none;
+    }
+}
+
+legend,
+.form-type-textarea label {
+    @include legend-style();
+}
+
+.form-type-textarea {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+
+    > [class^="col"] {
+        padding: 0;
+        max-width: 100%;
+        text-align: left!important;
+    }
+}
+
+.form-group-custom-control legend {
+    margin-bottom: $label-margin-bottom;
+    font-size: $label-font-size;
+}
+
+.custom-control label {
+    margin: 0;
+    display: inline-block; // surcharge drupal
+
+    font-size: inherit;
+    font-family: inherit;
+    text-transform: none;
+    color: inherit;
+
+    a {
+        color: inherit;
+
+        @include hover-focus-active {
+            color: $link-color;
+        }
+    }
+}
+
+.form-item,
+.form-actions {
+    margin-top: 0;
+}
+
+.form-item-group-pass {
+    margin-top: -2.2rem;
+}
+
+.form-required {
+    color: $primary;
+
+    &:after {
+        display: none; // remove pseudo element for accessibility
+        margin: 0;
+    }
+
+    &.custom-control-label::after {
+        display: block;
+    }
+}
+
+.form-composite > .fieldset-wrapper > .description,
+.form-group .description {
+    margin-top: $form-feedback-margin-top;
+    font-size: 1.4rem;
+    color: $gray-600;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+    border: 0.1rem solid $form-feedback-invalid-color;
+}
+
+.custom-control-input.is-invalid ~ .custom-control-label,
+.custom-control-input.error ~ .custom-control-label,
+.was-validated .custom-control-input:invalid ~ .custom-control-label,
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error,
+custom-control-input.error ~ .custom-control-label {
+    @if $enable-validation-icons {
+        padding-right: $input-height-inner;
+        background-image: $form-feedback-icon-invalid;
+        background-repeat: no-repeat;
+        background-position: center right $input-height-inner-quarter;
+        background-size: $input-height-inner-half $input-height-inner-half;
+    }
+}
+
+
+@include media-breakpoint-up(sm) {
+    label {
+        margin-top: $label-margin-bottom;
+
+        .small {
+            display: block;
+        }
+    }
+
+    .form-group-submit {
+        text-align: right;
+    }
+}

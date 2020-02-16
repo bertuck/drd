@@ -1,0 +1,31 @@
+name: Theme Front Master
+description: AW - Thème de base, il doit être parent du sous thème
+
+# core: 8.x
+type: theme
+base theme: classy
+version: 8.x-1.3
+
+# Informations
+core: 8.x
+libraries:
+  - theme_front_master/global-styling
+  - theme_front_master/global-scripts
+
+stylesheets-remove:
+  - core/themes/classy/css/components/menu.css
+  - core/themes/classy/css/components/breadcrumb.css
+  - core/themes/classy/css/components/button.css
+  - core/themes/classy/css/components/messages.css
+  - core/themes/classy/css/components/pager.css
+  - core/assets/vendor/normalize-css/normalize.css
+
+regions:
+  header: 'Header'
+  system_messages: 'System Messages'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  help: 'Help'
+  footer: 'Footer'
+  footer_bottom: 'Footer Bottom'

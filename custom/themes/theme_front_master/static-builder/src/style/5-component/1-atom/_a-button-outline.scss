@@ -1,0 +1,213 @@
+/*
+
+** ATOM - Button Outline Background **
+or ghost-button in design
+
+
+*/
+
+[class^="btn-outline-"]
+{
+    background-image: none;
+    background-color: transparent;
+}
+
+.btn-outline-primary
+{
+    border-color: $primary-color;
+    color: $primary-color;
+
+    @include hover
+    {
+        background-color: $primary-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $primary-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($primary-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-secondary
+{
+    border-color: $secondary-color;
+    color: $secondary-color;
+
+    @include hover
+    {
+        background-color: $secondary-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $secondary-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($secondary-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-success
+{
+    border-color: $success-color;
+    color: $success-color;
+
+    @include hover
+    {
+        background-color: $success-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $success-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($success-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-info
+{
+    border-color: $info-color;
+    color: $info-color;
+
+    @include hover
+    {
+        background-color: $info-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $info-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($info-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-warning
+{
+    border-color: $warning-color;
+    color: $warning-color;
+
+    @include hover
+    {
+        background-color: $warning-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $warning-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($warning-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-danger
+{
+    border-color: $danger-color;
+    color: $danger-color;
+
+    @include hover
+    {
+        background-color: $danger-color;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $danger-color;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($danger-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-light
+{
+    border-color: $gray-200;
+    color: $gray-200;
+
+    @include hover
+    {
+        background-color: $gray-200;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $gray-200;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($gray-200, 10%);
+        color: $white;
+    }
+}
+
+.btn-outline-dark
+{
+    border-color: $gray-500;
+    color: $gray-500;
+
+    @include hover
+    {
+        background-color: $gray-500;
+        color: $white;
+    }
+
+    .focus
+    &:focus
+    {
+        outline: 0.1rem dashed $gray-500;
+        outline-offset: 0.4rem;
+    }
+
+    @include active
+    {
+        background-color: darken($gray-500, 10%);
+        color: $white;
+    }
+}

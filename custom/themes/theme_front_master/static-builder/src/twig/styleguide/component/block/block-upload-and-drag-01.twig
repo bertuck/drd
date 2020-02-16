@@ -1,0 +1,57 @@
+<form>
+    <div class="block-upload-and-drag">
+
+        <div class="block-upload-and-drag--file">
+            <span class="icon-ajouter-un-document" aria-hidden="true"></span>
+
+            <div class="block-upload-and-drag--file-item">
+                <p class="block-upload-and-drag--file-name">
+                    Titre du fichier.pdf
+                    <span class="block-upload-and-drag--file-weight">8,5 Mo</span>
+                </p>
+
+                <button type="button" class="btn btn-link btn-icon-left">
+                    <span class="icon-fermer" aria-hidden="true"></span>Annuler
+                    <span class="sr-only">le téléchargement de Titre du fichier.pdf</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="block-upload-and-drag--upload">
+            <button type="submit" class="btn btn-secondary">
+                Valider
+                <span class="sr-only">le téléchargement de Titre du fichier.pdf</span>
+            </button>
+        </div>
+
+    </div>
+</form>
+
+<form>
+    <div class="block-upload-and-drag">
+
+        <div class="block-upload-and-drag--file">
+            <span class="icon-ajouter-un-document" aria-hidden="true"></span>
+
+            <div class="block-upload-and-drag--file-item">
+                <p class="block-upload-and-drag--file-name">
+                    Titre du fichier.pdf
+                    <span class="block-upload-and-drag--file-weight">8,5 Mo</span>
+                </p>
+
+                <button type="button" class="btn btn-link btn-icon-left">
+                    <span class="icon-fermer" aria-hidden="true"></span>Annuler
+                    <span class="sr-only">le téléchargement de Titre du fichier.pdf</span>
+                </button>
+
+                <p class="description text-secondary" id="uploadError">Format de fichier non valide.<br>
+                Votre fichier doit impérativement être un pdf, un jpg ou un doc. et doit avoir un poids maximum de 5 Mo.</p>
+            </div>
+        </div>
+
+        <div class="block-upload-and-drag--upload">
+            <button type="submit" class="btn btn-secondary" aria-describedby="uploadError">Recommencer</button>
+        </div>
+
+    </div>
+</form>

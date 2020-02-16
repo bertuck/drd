@@ -1,0 +1,64 @@
+drd_react_dashboard.view:
+  path: '/dashboard/{page}'
+  defaults:
+    page: ''
+    _controller: '\Drupal\drd_react_dashboard\Controller\DashboardAppController::view'
+    _title: 'My React App'
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.get_content:
+  path: 'api/{uid}/content/created'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::getTotalNodesByType'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.get_last_nodes_data:
+  path: 'api/{uid}/content/{type}/{limit}'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::getLastNodes'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.get_liked_nodes:
+  path: 'api/{uid}/liked/nodes'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::getLikedNodes'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.get_users:
+  path: 'api/users/{limit}'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::getUsers'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.unflag_nodes:
+  path: 'api/{uid}/unflag/{nid}'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::unFlagNodes'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.flag_nodes:
+  path: 'api/{uid}/flag/{nid}'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::flagNodes'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+
+drd_react_dashboard.api.simple_page:
+  path: 'api/page/{nid}'
+  defaults:
+    _controller: '\Drupal\drd_react_dashboard\Controller\ApiAppController::getSimplePage'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'

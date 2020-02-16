@@ -1,0 +1,25 @@
+.o-result {
+    padding: 3rem 2rem;
+
+    background-color: $gray-100;
+    color: $gray-600;
+
+    @include media-breakpoint-up(lg) {
+        padding: 5rem 2rem;
+    }
+}
+
+.o-result-nb {
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+    color: $gray-600;
+}
+
+.o-result-show-more {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.o-result-show-more-text {
+    font-size: 1.4rem;
+}

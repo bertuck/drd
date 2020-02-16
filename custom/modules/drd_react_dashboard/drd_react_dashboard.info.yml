@@ -1,0 +1,7 @@
+name: DRD React Dashboard
+type: module
+description: ''
+
+version: '8.x-1.0'
+core: '8.x'
+project: 'DRD'

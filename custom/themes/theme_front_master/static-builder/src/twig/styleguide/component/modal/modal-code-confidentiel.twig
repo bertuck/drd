@@ -1,0 +1,54 @@
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-target="#modalCodeConf" data-toggle="modal" type="button">
+    Modal code confidentiel
+</button>
+
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="modalCodeConfLabel" class="modal fade" id="modalCodeConf" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-uppercase" id="modalCodeConfLabel">Entrez votre code confidentiel reçu par appel ou par sms</h2>
+
+                <button aria-label="Close" class="close btn-icon-left" data-dismiss="modal" type="button">
+                    <span class="icon-fermer" aria-hidden="true"></span>
+                    <span class="btn-text">Fermer</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <p>Une fois le code de vérification transmis, vous recevrez un lien d'authentification sur votre boîte mail afin d'activer votre compte.</p>
+
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Saisissez votre code confidentiel" aria-label="Saisissez votre code confidentiel" aria-describedby="button-addon5">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary" id="button-addon5">Valider</button>
+                        </div>
+                    </div>
+
+                    <div class="block-code-problem">
+                        <h3><strong>Un problème ?</strong></h3>
+                        <p>Recevez de nouveau votre code confidentiel</p>
+
+                        <div class="form-group">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Appel sur votre téléphone fixe</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">SMS sur votre téléphone portable</label>
+                            </div>
+                        </div>
+
+                        <div class="btn-group justify-content-center d-flex">
+                            <button type="submit" class="btn btn-outline-primary">Demander un nouveau code confidentiel</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+// Pour masquer les panels
+.js-tabcontent[aria-hidden=true] { display: none; }
+
+.tabs__list
+{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    margin: 0 !important;
+}
+
+.tabs__item
+{
+    display: table-cell;
+    width: 100%;
+
+    &::before
+    {
+        display: none !important;
+    }
+}
+
+.tabs__link
+{
+    position: relative;
+    overflow: hidden;
+
+    display: block;
+
+    padding: 1rem 0;
+
+    width: 100%;
+
+    background-color: $white;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    color: $black;
+
+    cursor: pointer;
+
+    &:first-letter
+    {
+        text-transform: uppercase;
+    }
+
+    &::after
+    {  
+        content:'';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 0.3rem;
+        
+        background-color: $primary-color;
+
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+
+    &:focus,
+    &:hover,
+    &:active
+    {
+        &::after
+        {
+            transform: translateY(0%);
+        }
+    }
+
+    &:focus
+    {
+        outline: 0.1rem dashed;
+        outline-offset: -0.1rem;
+    }
+
+    &[aria-selected='true']
+    {
+        font-weight: 700;
+        color: $primary-color;
+
+        &::after
+        {
+            transform: translateY(0%);
+        }
+    }
+}
+
+.tabs__content
+{
+
+}
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// Custom pour la page notice norme
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+.tabpanel-container
+{
+    @include clearAfter;
+    margin-bottom: 4rem;
+}
+
+.js-tabs-vertical
+{
+    .tabs__list,
+    .tabs__content
+    {
+        float: left;
+    }
+
+    .tabs__list
+    {
+        display: block;
+        width: 3.8rem;
+        padding-left: 0;
+    }
+
+    .tabs__item
+    {
+        display: block;
+
+        padding-top: 0;
+        padding-bottom: 0;
+        
+        width: 3.8rem;
+        height: 3.8rem;
+
+        margin-bottom: 0.2rem;
+    }
+
+    .tabs__link
+    {
+        padding: 0 0 0 0.2em;
+
+        height: 3.8rem;
+        line-height: 3.8rem;
+
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: $gray-200;
+
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+
+        color: $black;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        [class^="icon-"]
+        {
+            font-size: 1.6rem;
+        }
+
+        &::after
+        {
+            display: none;
+        }
+
+        &[aria-selected='true']
+        {
+            border-color: $black;
+            background-color: $black;
+
+            color: $white;
+            font-weight: 700;
+        }
+
+        @include hover
+        {
+            border-color: $black;
+            background-color: $black;
+
+            color: $white;
+            font-weight: 700;
+        }
+
+        &:focus
+        {
+            outline: 0.1rem dashed $black;
+            outline-offset: 0.2rem;
+        }
+    }
+
+    .tabs__content
+    {
+        margin-left: -0.1rem;
+        padding: 0 2rem;
+        
+        width: calc(100% - 3.8rem);
+        border-left: 0.1rem solid $gray-200;
+
+        p
+        {
+            margin-top: 0;
+        }
+
+        ul
+        {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

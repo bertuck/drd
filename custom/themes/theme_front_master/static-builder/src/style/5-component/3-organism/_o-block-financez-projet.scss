@@ -1,0 +1,57 @@
+.o-block-financez-projet {
+    padding: $landing-section-spacing-y 0;
+}
+
+.o-block-financez-projet-inner {
+    max-width: 77rem;
+    margin: auto;
+    padding: 3rem;
+
+    background-color: $white;
+
+    border: solid 0.1rem $border-color;
+}
+
+.o-block-financez-projet-title {
+    @include title-landing-style();
+
+    margin-bottom: 0.5rem;
+    color: $brand-2;
+}
+
+.o-block-financez-projet-text {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: $gray-600;
+}
+
+@include media-breakpoint-up(md) {
+    .o-block-financez-projet {
+        padding: $landing-section-spacing-y-md 0;
+    }
+
+    .o-block-financez-projet-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .o-block-financez-projet-text {
+        margin-bottom: 0;
+    }
+
+    .o-block-financez-projet-action {
+        margin-left: 2rem;
+        white-space: nowrap;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .o-block-financez-projet {
+        padding: $landing-section-spacing-y-xl 0;
+    }
+
+    .o-block-financez-projet-inner {
+        padding: 6rem;
+    }
+}

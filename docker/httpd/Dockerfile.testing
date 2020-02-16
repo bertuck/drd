@@ -1,0 +1,10 @@
+ARG REGISTRY
+ARG APP_NAMESPACE
+ARG BRANCH
+
+FROM ${REGISTRY}/${APP_NAMESPACE}/sources-dev:${BRANCH} as sources-dev
+# PIC environment from httpd-base image
+FROM ${REGISTRY}/${APP_NAMESPACE}/httpd-base:${BRANCH}
+# Custom specifications for testing environment
+## COPY builded sources files
+COPY --from=sources-dev --chown=www-data /var/www/html ./

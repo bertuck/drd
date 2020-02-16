@@ -1,0 +1,25 @@
+.o-list-result-item {
+    &:not(:last-child) {
+        position: relative;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            height: 0.1rem;
+            max-width: 62rem;
+            margin: auto;
+            background-color: rgba($gray-600, 0.27);
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 5rem;
+            margin-bottom: 5rem;
+        }
+    }
+}

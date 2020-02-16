@@ -1,0 +1,14 @@
+.o-more-link {
+    margin-top: 3rem;
+    padding: 1.4rem;
+
+    border: 0.1rem solid $border-color;
+
+    .h3 {
+        margin-top: 0;
+    }
+
+    a {
+        color: $body-color;
+    }
+}

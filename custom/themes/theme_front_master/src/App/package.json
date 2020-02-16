@@ -1,0 +1,57 @@
+{
+  "name": "dashboard-reactjs",
+  "version": "1.0.0",
+  "main": "public/index.html",
+  "repository": "./",
+  "license": "UNLICENCED",
+  "scripts": {
+    "serve": "parcel public/index.html",
+    "build": "parcel build public/index.html && ./rename_dist.sh"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@types/react": "^15.0.0 || ^16.0.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0",
+    "react-hot-loader": "^4.12.19"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all",
+    "since 2017-06"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.19.2",
+    "chart.js": "2.7.3",
+    "classnames": "2.2.6",
+    "mdbreact": "^4.25.1",
+    "node-sass": "4.11.0",
+    "popper.js": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-chartjs-2": "2.6.4",
+    "react-content-loader": "^5.0.1",
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-feather": "1.1.6",
+    "react-fontawesome": "1.6.1",
+    "react-js-pagination": "^3.0.2",
+    "react-redux": "^6.0.0 || ^7.0.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "4.3.1",
+    "react-sanitized-html": "^2.0.0",
+    "reactstrap": "6.4.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "sanitize-html": "^1.21.1"
+  },
+  "jshintConfig": {
+    "expr": true,
+    "esversion": 6
+  }
+}

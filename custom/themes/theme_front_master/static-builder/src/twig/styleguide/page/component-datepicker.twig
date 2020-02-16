@@ -1,0 +1,28 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Datepicker Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Datepicker</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>Utilisation du composant <a href="https://ng-bootstrap.github.io/#/components/datepicker" target="_blank">Datepicker de ng-bootstrap</a>.</p>
+        {% endblock %}
+    {% endembed %}
+
+    <div class="clearfix">
+        {% include "../component/datepicker/datepicker.twig" %}
+    </div>
+
+    {% set path_code = '../../component/datepicker/datepicker.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

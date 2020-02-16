@@ -1,0 +1,22 @@
+<p class="text-uppercase">.text-uppercase</p>
+
+<p class="text-secondary">.text-secondary</p>
+
+<p class="with-dot">.with-dot</p>
+
+<h3 class="hn-icon">
+    <span class="icon-check" aria-hidden="true"></span>
+    .hn-icon
+</h3>
+
+{% embed "../../layout/callout.twig" with {
+    callout_type: "sg-callout-warning"
+} %}
+    {% block sg_callout_content %}
+        <p>Il est possible d'assembler plusieurs class pour arriver au résultat souhaité.</p>
+    {% endblock %}
+{% endembed %}
+
+<h2 class="no-border">Titre de niveau&nbsp;h2 + .no-border</h2>
+<h3 class="with-dot">Titre de niveau&nbsp;h3 + .with-dot</h3>
+<h3 class="text-uppercase text-secondary">Titre de niveau&nbsp;h3 + .text-uppercase + .text-secondary</h3>

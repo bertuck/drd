@@ -1,0 +1,6 @@
+.clear,
+.clearfix
+{
+    clear: both;
+    @include clearfix;
+}

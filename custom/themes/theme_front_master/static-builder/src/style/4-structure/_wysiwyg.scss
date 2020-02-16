@@ -1,0 +1,115 @@
+.wysiwyg,
+.cke_editable {
+    color: $gray-600;
+
+    h2, h3, h4, h5, h6 {
+        color: $primary;
+    }
+
+    h2:not(:first-child) {
+        margin-top: 3rem;
+    }
+
+    h3 {
+        margin-top: 2.4rem;
+    }
+
+    h4, h5, h6 {
+        margin-top: 2rem;
+    }
+
+    a {
+        @include hyphens;
+
+        &[target="_blank"] {
+            @include external-link();
+        }
+    }
+
+    ol, ul, dl {
+        padding-left: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    ul {
+        @include list-ul();
+    }
+
+    ol {
+        @include list-ol();
+    }
+
+    ul, ol {
+        ul, ol {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    dd {
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+    }
+
+    .list-has-arrow {
+        padding: 0;
+
+        > li {
+            @include icon(before, icon-arrow-right) {
+                position: absolute;
+                top: 0.8rem;
+                left: 0;
+                font-size: 0.8rem;
+                color: $primary;
+            }
+        }
+    }
+
+    .m-media,
+    .embedded-entity {
+        margin-bottom: 1rem;
+    }
+
+    table {
+        margin: 3rem 0;
+
+        th {
+            font-weight: bold;
+        }
+
+        thead th {
+            border-bottom-width: $table-border-width*2;
+        }
+
+        th,
+        td {
+            border-top: 0;
+            border-bottom: $table-border-width solid $table-border-color;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .wysiwyg,
+    .cke_editable {
+        ul, ol {
+            padding-left: 4rem;
+        }
+
+        .ckeditor-blocks {
+            @include clearfix;
+
+            .left, .right {
+                float: left;
+                width: 50%;
+            }
+
+            .left {
+                padding-right: $grid-gutter-width*0.5;
+            }
+            .right {
+                padding-left: $grid-gutter-width*0.5;
+            }
+        }
+    }
+}

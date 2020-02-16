@@ -1,0 +1,131 @@
+//
+// a11y Config
+//
+.a11y-config {
+    .modal-header {
+        padding-bottom: 0;
+    }
+
+    .modal-body {
+        padding-top: 0;
+    }
+
+    .btn-close {
+        padding: 0;
+        width: 3.5rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+
+        font-size: 1.3rem;
+    }
+
+    fieldset {
+        display: block;
+        text-align: left;
+    }
+
+    legend {
+        display: block;
+        width: 100%;
+
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+
+    fieldset ~ fieldset legend {
+        padding-top: 2rem;
+        border-top: 0.1rem solid $border-color;
+    }
+
+    input {
+        @include sr-only;
+    }
+
+    label {
+        cursor: pointer;
+
+        display: block;
+
+        background-color: $gray-100;
+
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        @include hover-focus-active {
+            background-color: $gray-200;
+        }
+    }
+
+    label ~ label {
+        margin-left: 1rem;
+    }
+
+    input:focus + label {
+        outline: 0.1rem dashed $primary;
+        outline-offset: 0.4rem;
+    }
+
+    input:checked + label {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.a11y-config--desc {
+    margin-bottom: 2rem;
+
+    font-size: 2rem;
+    color: $primary;
+}
+
+.a11y-config--item {
+    display: inline-block;
+    vertical-align: top;
+
+    margin-bottom: 1rem;
+
+    + .a11y-config--item {
+        margin-left: 0.5rem;
+    }
+}
+
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+//
+// Les data- sur <boby>
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+body[data-contrast="high-c"] {
+
+}
+
+body[data-contrast="inv-c"] {
+    ::-webkit-input-placeholder { color: $yellow-access !important; }
+    :-moz-placeholder { color: $yellow-access !important; }
+    ::-moz-placeholder { color: $yellow-access !important; }
+    :-ms-input-placeholder { color: $yellow-access !important; }
+
+    ::-moz-selection
+    {
+        color: $blue-access;
+        background-color: $yellow-access;
+    }
+
+    ::selection
+    {
+        color: $blue-access;
+        background-color: $yellow-access;
+    }
+
+    * {
+        background-color: $blue-access!important;
+        color: $yellow-access!important;
+    }
+}
+
+body[data-font="dys-font"] {
+    font-family: OpenDyslexic, $font-family-base;
+}
+
+body[data-line-space="dys-line-space"] {
+    line-height: 200%!important;
+}

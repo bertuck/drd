@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// cover.scss -- effect on images
+//
+
+.cover
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+
+    img
+    {
+        display: none;
+    }
+}

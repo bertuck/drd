@@ -1,0 +1,135 @@
+$tab-colors: (
+    "1":    $gray-700,
+    "2":    $primary,
+    "3":    $brand-3,
+);
+
+.o-tabs-01 {
+    position: relative;
+
+    .nav-tabs {
+        border: 0;
+    }
+
+    .nav-item {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+
+        &:first-child {
+            .nav-tabs-text {
+                border-left-width: 0;
+            }
+        }
+
+        &:last-child {
+            .nav-tabs-text {
+                border-right-width: 0;
+            }
+        }
+    }
+
+    .nav-link {
+        padding: 0;
+        border: 0;
+        text-decoration: none;
+    }
+
+    .nav-tabs-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: auto;
+        width: 6rem;
+        height: 3.74rem;
+        padding: 1rem;
+
+        background-color: $white;
+        border: 0.2rem solid;
+        border-radius: 0.5rem;
+
+        @include dotted-marker();
+
+        @include media-breakpoint-up(lg) {
+            width: 10.9rem;
+            height: 6.8rem;
+            font-size: 3.5rem;
+        }
+    }
+
+    .nav-tabs-text {
+        position: relative;
+        display: block;
+        margin-top: 1.2rem;
+        padding: 0.5rem 1rem;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        border-left: solid 0.2rem transparent;
+        border-right: solid 0.2rem transparent;
+    }
+
+    .active {
+        .nav-tabs-icon {
+            color: $white;
+            background-color: $body-color;
+        }
+
+        .nav-tabs-text {
+            background-color: $gray-100;
+            border-top: solid 0.5rem;
+            border-color: currentColor;
+
+            &::before {
+                content: "";
+
+                @include triangle(2.4rem, currentColor, up) {
+                    position: absolute;
+                    top: calc(-2.4rem*0.5 - 0.5rem);
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .tab-pane {
+        padding: 3rem;
+        background-color: $gray-100;
+        border-top: solid 0.1rem;
+        border-bottom: solid 0.1rem;
+
+        @include dotted-marker();
+
+        a {
+            color: currentColor;
+        }
+    }
+
+    .list-has-arrow {
+        margin-bottom: 0;
+    }
+
+    @each $color, $value in $tab-colors {
+        .tab--color-#{$color} {
+            &,
+            &.active,
+            a,
+            .list-has-arrow > li:before {
+                color: $value;
+            }
+
+            &.active .nav-tabs-icon {
+                background-color: $value;
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,22 @@
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+//
+// LAYOUT
+//
+// important
+// - Respecter l'ordre d'appel
+// -- typography.scss
+// -- header
+// -- etc.
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+@import 'typography';
+@import 'layout';
+@import 'header';
+@import 'nav-skip';
+@import 'nav';
+@import 'footer';
+@import 'breadcrumb';
+@import 'aside';
+
+@import 'drupal';
+@import 'wysiwyg'; 

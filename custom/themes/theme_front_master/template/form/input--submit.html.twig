@@ -1,0 +1,40 @@
+{% if(attributes.hasClass('no-wrap')) %}
+    {% if(attributes.hasClass('search-icon')) %}
+        <button{{ attributes.addClass('btn') }}>
+        <span class="icon icon-search" aria-hidden="true"></span>
+        <span class="sr-only">{{title}}</span>
+    {% else %}
+        <button{{ attributes.addClass('btn btn-primary btn-arrow') }}>
+        {{ title }}
+    {% endif %}
+        </button>
+    {{ children }}
+{% elseif(attributes.hasClass('login')) %}
+            <button class="btn btn-link btn-login">
+                {{ title }}
+            </button>
+        {{ children }}
+{% elseif(attributes.hasClass('cancel-account')) %}
+            <button class="btn btn-outline-secondary" data-dismiss="modal">
+                {{ title }}
+            </button>
+        {{ children }}
+{% elseif(attributes.hasClass('delete-account')) %}
+        <button{{ attributes.addClass('btn btn-primary btn-arrow') }}>
+            {{ title }}
+        </button>
+        {{ children }}
+{% else %}
+    <div class="form-group form-group-submit">
+        {% if(attributes.hasClass('search-icon')) %}
+            <button{{ attributes.addClass('btn') }}>
+            <span class="icon icon-search" aria-hidden="true"></span>
+            <span class="sr-only">{{title}}</span>
+        {% else %}
+            <button{{ attributes.addClass('btn btn-primary btn-arrow') }}>
+                {{ title }}
+        {% endif %}
+            </button>
+        {{ children }}
+    </div>
+{% endif %}

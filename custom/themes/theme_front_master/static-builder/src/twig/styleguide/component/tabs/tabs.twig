@@ -1,0 +1,36 @@
+<ul class="nav nav-tabs nav-tabs--default" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="demande-tab" data-toggle="tab" href="#demande" role="tab" aria-controls="demande" aria-selected="true">
+            <span class="nav-link--text">Toutes les demandes</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="consignation-tab" data-toggle="tab" href="#consignation" role="tab" aria-controls="consignation" aria-selected="false">
+            <span class="nav-link--text">Consignation en cours</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="deconsignation-tab" data-toggle="tab" href="#deconsignation" role="tab" aria-controls="deconsignation" aria-selected="false">
+            <span class="nav-link--text">Déconsignation en cours</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="archive-tab" data-toggle="tab" href="#archive" role="tab" aria-controls="archive" aria-selected="false">
+            <span class="nav-link--text">Archives</span>
+        </a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="demande" role="tabpanel" aria-labelledby="demande-tab">
+        {% block tabContent01 %}{% endblock %}
+    </div>
+    <div class="tab-pane fade" id="consignation" role="tabpanel" aria-labelledby="consignation-tab">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime provident assumenda est incidunt. Doloribus similique, quos officia nostrum sit a veniam placeat architecto veritatis accusantium. Illo optio facilis corporis suscipit!</p>
+    </div>
+    <div class="tab-pane fade" id="deconsignation" role="tabpanel" aria-labelledby="deconsignation-tab">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eaque soluta quaerat nihil iusto sit! Laboriosam quae eligendi minima ad consequatur alias, dolores repellat odio suscipit doloribus dignissimos reprehenderit ut? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem repellendus recusandae aliquam! Commodi quae veniam eum quas. Nesciunt at minus debitis enim consequuntur labore distinctio, placeat porro iure facere atque?</p>
+    </div>
+    <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
+        <p>Laboriosam quae eligendi minima ad consequatur alias, dolores repellat odio suscipit doloribus dignissimos reprehenderit ut? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem repellendus recusandae aliquam! Commodi quae veniam eum quas. Nesciunt at minus debitis enim consequuntur labore distinctio, placeat porro iure facere atque?</p>
+    </div>
+</div>

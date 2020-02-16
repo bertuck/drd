@@ -1,0 +1,90 @@
+version: "3.6"
+
+services:
+  mysql:
+    image: 'centos/mysql-56-centos7'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PROJECT_NAME}
+      MYSQL_DATABASE: ${PROJECT_NAME}
+      MYSQL_USER: ${PROJECT_NAME}
+      MYSQL_PASSWORD: ${PROJECT_NAME}
+      MYSQLD__character-set-server: "utf8"
+      MYSQLD__max_allowed_packet: "128M"
+    labels:
+      traefik.enable: 'true'
+
+  httpd:
+    image: "${REGISTRY}/${APP_NAMESPACE}/httpd-local"
+    labels:
+      traefik.enable: 'true'
+    environment:
+      # Set httpd
+      WEB_APP_DIR: drupal
+      # Set phpfpm
+      HTTPD_ENABLE_PHPFPM_INET: 'true'
+      PHPFPM_HOST: php
+      PHPFPM_PORT: 9000
+      # Set consul
+      SERVICE_80_NAME: '${PROJECT_NAME}'
+      SERVICE_80_TAGS: 'http'
+    volumes:
+      - ../../../:/var/www/html/
+    depends_on:
+      - php
+
+  php:
+    image: "${REGISTRY}/${APP_NAMESPACE}/php-local"
+    user: ${LOCAL_USERNAME}:${LOCAL_USERNAME}
+    environment:
+      PM_MODE: 'dynamic'
+      MYSQL_DATABASE: ${PROJECT_NAME}
+      MYSQL_USER: ${PROJECT_NAME}
+      MYSQL_PASSWORD: ${PROJECT_NAME}
+      MYSQL_HOST: "mysql"
+      SMTP_RELAY_HOST: "smtp"
+      PHP__sendmail_path: '/usr/sbin/ssmtp -t'
+      PHP__memory_limit: '512M'
+      PHP__xdebug_dot_remote_host: ${LOCAL_DOCKER_IP}
+      PHP__xdebug_dot_remote_port: '9000'
+      PHP__xdebug_dot_remote_enable: 1
+      PHP__xdebug_dot_remote_autostart: 1
+      PHP__xdebug_dot_remote_connect_back: 0
+      PHP__xdebug_dot_remote_handler: "dbgp"
+      PHP__xdebug_dot_default_enable: 1
+      PHP__xdebug_dot_idekey: 'PHPSTORM'
+      BEHAT_PARAMS: '{"extensions": {"Behat\\MinkExtension": {"base_url": "http://httpd"}}}'
+    volumes:
+      - ../../../:/var/www/html/
+      - ${LOCAL_HOME}/.composer:/home/${LOCAL_USERNAME}/.composer
+      - ${LOCAL_HOME}/.drush:/home/${LOCAL_USERNAME}/.drush
+    depends_on:
+      - mysql
+
+  smtp:
+    image: 'schickling/mailcatcher'
+    labels:
+      traefik.enable: 'true'
+    environment:
+      SERVICE_80_NAME: '${PROJECT_NAME}-mailcatcher'
+      SERVICE_80_TAGS: 'http'
+
+  node:
+    image: "${REGISTRY}/${APP_NAMESPACE}/node-local"
+    user: ${LOCAL_UID}
+    stdin_open: true
+    volumes:
+      - ../../../custom/themes/theme_front_master:/usr/src/app
+      - ../../../tests:/usr/src/tests
+
+  hubtesting:
+    image: selenium/hub:3.141.59-mercury
+    ports:
+      - 4444
+
+  chrometesting:
+    image: selenium/node-chrome:3.141.59-mercury
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=hubtesting
+      - HUB_PORT_4444_TCP_PORT=4444
+    depends_on:
+      - hubtesting

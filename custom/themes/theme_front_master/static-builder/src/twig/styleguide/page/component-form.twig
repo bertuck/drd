@@ -1,0 +1,134 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Form Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Form</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+        } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Pour toutes questions sur l'accessibilité des formulaires
+                <br>
+                Une bonne ressource à lire : <a href="https://www.accede-web.com/notices/html-css-javascript/7-formulaires/" target="_blank">Les notices AcceDe Web : Les formulaires</a>
+            </p>
+            <p>
+                Ne pas mettre d'attribut <b>disabled</b> sur le bouton submit d'un formulaire.
+                <br>
+                Car les lecteurs d'écran ne peuvent pas tabuler (donc naviguer) sur un élément en disabled
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+        } %}
+        {% block sg_callout_content %}
+            <p>
+                Un JS est nécessaire pour faire les labels flottants. Voir app.js (reprise de BDT)
+                <br>
+                Ajout de la class <code>.float-target</code> sur les input + <code>.float-target-parent</code> sur le parent
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    <h2 class="sg-title" id="Form">Form</h2>
+    {% include "../component/form/form.twig" %}
+    {% set path_code = '../../component/form/form.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Form-validation">Form validation</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                <a href="https://getbootstrap.com/docs/4.1/components/forms/#validation" target="_blank">Bootstrap form validation</a>
+            </p>
+            <p>
+                <strong>Un message d'erreur doit être relié à son input avec aria.</strong>
+                <br>
+                <code>
+                    &lt;input type="text" class="form-control float-target" id="exampleFormControlInputText100Invalid" required aria-describedby="invalid01"&gt;
+                    <br>
+                    &lt;div class="invalid-feedback" id="invalid01"&gt;
+                        &lt;p&gt;invalid&lt;/p&gt;
+                    &lt;/div&gt;
+                </code>
+            </p>
+            <p>
+                <strong>En cas d'erreur sur la page <u>après soumission</u> du formulaire.</strong>
+                <br>
+                Il faut changer le &lt;title&gt; de la page en ajoutant devant :
+                <br>
+                Formulaire en erreur (nombre d'erreur) - titre de la page...
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/form/form-validation.twig" %}
+    {% set path_code = '../../component/form/form-validation.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Form-row">Form row</h2>
+    {% include "../component/form/form-row.twig" %}
+    {% set path_code = '../../component/form/form-row.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Form-fieldset-toggle">Form fieldset toggle</h2>
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <ul>
+                <li>
+                    <p>
+                        En desktop, utiliser la structure suivante :<br>
+                        <code>
+                            &lt;fieldset&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Legend&lt;/legend&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[forms elements]<br>
+                            &lt;/fieldset&gt;
+                        </code>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        En mobile, utiliser <a href="https://getbootstrap.com/docs/4.1/components/collapse/" target="_blank">Bootstrap collapse</a>.<br>
+                        Le premier toggle est ouvert par défaut.<br>
+                        <code>
+                            &lt;fieldset&gt; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" class="btn btn-actions btn-toggle-collapse btn-form-collapse" data-toggle="collapse" data-target="#ID" aria-expanded="true" aria-controls="ID"&gt; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Legend <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="icon-chevron-down" aria-hidden="true"&gt;&lt;/span&gt; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt; <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/legend&gt;<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="collapse show" id="ID"&gt; [forms elements] &lt;/div&gt; <br>
+                            &lt;/fieldset&gt;
+                        </code>
+                    </p>
+                </li>
+            </ul>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/form/form-fieldset-toggle.twig" %}
+    {% set path_code = '../../component/form/form-fieldset-toggle.twig' %}
+    {% set collapse_id = '03' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

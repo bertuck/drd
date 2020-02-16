@@ -1,0 +1,39 @@
+.home-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $home-title-height;
+
+    padding-left: $grid-gutter-width*0.5;
+    padding-right: $grid-gutter-width*0.5;
+}
+
+.home-title {
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-align: center;
+
+    color: inherit;
+
+    @include media-breakpoint-up(md) {
+        font-size: 2rem;
+    }
+}
+
+.home {
+    .o-block-ademe {
+        display: none;
+    }
+
+    // reset container only on homepage SAS
+    .header--principal-inner {
+        max-width: none;
+    }
+
+    .region-footer-zone4-inner {
+        border-top: 0;
+    }
+}

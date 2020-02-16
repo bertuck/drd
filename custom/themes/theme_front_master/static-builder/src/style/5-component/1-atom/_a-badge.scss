@@ -1,0 +1,158 @@
+/*
+
+** ATOM - Badge **
+** Use <a> or <span>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+<a href="#" class="badge badge-primary">Primary</a>
+<a href="#" class="badge badge-secondary">Secondary</a>
+<a href="#" class="badge badge-success">Success</a>
+<a href="#" class="badge badge-danger">Danger</a>
+<a href="#" class="badge badge-warning">Warning</a>
+<a href="#" class="badge badge-info">Info</a>
+
+<a href="#" class="badge badge-light">Light</a>
+<a href="#" class="badge badge-dark">Dark</a>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+
+<span class="badge badge-light">Light</span>
+<span class="badge badge-dark">Dark</span>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+*/
+
+.badge
+{
+
+    display: inline-block;
+    padding: .25em .4em;
+
+    border-radius: .25rem;
+    
+    color: #fff;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+
+    // if <a>
+    text-decoration: none;
+
+    &:empty
+    {
+
+    }
+    
+    &-pill
+    {
+
+    }
+
+    &-primary
+    {
+        background-color: #007bff;
+
+        &:focus, 
+        &:hover
+        {
+            background-color: #0062cc;
+        }
+    }
+
+    &-secondary
+    {   
+        background-color: #6c757d;
+
+        &:focus, 
+        &:hover
+        {
+            background-color: #545b62;
+        }
+    }
+
+    &-success
+    {
+        background-color: #28a745;
+        
+        &:focus, 
+        &:hover
+        {
+            background-color: #1e7e34;
+        }
+    }
+
+    &-info
+    {   
+        background-color: #17a2b8;
+
+        &:focus, 
+        &:hover
+        {
+            background-color: #117a8b;
+        }
+    }
+
+    &-warning
+    {
+        color: #212529;
+        background-color: #ffc107;
+
+        &:focus, 
+        &:hover
+        {
+            background-color: #d39e00;
+        }
+    }
+
+    &-danger
+    {
+        background-color: #dc3545;
+        
+        &:focus, 
+        &:hover
+        {
+            background-color: #bd2130;
+        }
+    }
+
+    &-light
+    {
+        color: #212529;
+        background-color: #f8f9fa;
+
+        &:focus, 
+        &:hover
+        {
+            background-color: #dae0e5;
+        }
+    }
+
+    &-dark
+    {
+        background-color: #343a40;
+        
+        &:focus, 
+        &:hover
+        {
+            background-color: #1d2124;
+        }
+    }
+}
+
+.btn .badge
+{
+    position: relative;
+    top: -1px;
+}

@@ -1,0 +1,82 @@
+// fonticon.scss -- Icons custom for project
+
+$fonticon  : 'ademe';
+
+// http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+//  *
+//  * Set Icons custom with optionals position and style.
+//  *
+//  * @mixin
+//  * @section Fonts
+//  * @param $position Position of icon
+//  * @param $icon Name of icon
+//  *  The font weight to be used.
+//  * @example
+//  *  @include icon(before, contact);
+//  *  @include icon(after, arrow-right);
+//  *  @include icon(both, star);
+//  *  @include icon(before, contact) {
+//         margin-right: 20px;
+//     }
+// For adding font icons to elements using CSS pseudo-elements
+@mixin icon($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            // A particular icon has been specified
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            // Supportive icon styles required
+            font-family: '#{$fonticon}' !important;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            font-size: inherit;
+            color: inherit;
+
+            // Better Font Rendering
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            // Screenreaders should ignore that kind of elements
+            -webkit-alt: "";
+            speak: none;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
+}
+
+$icons: (
+    icon-external-link: "\e911",
+    icon-search: "\e912",
+    icon-eye-blocked: "\e90f",
+    icon-eye: "\e910",
+    icon-clap: "\e901",
+    icon-timer: "\e90d",
+    icon-access: "\e900",
+    icon-envelope: "\e90e",
+    icon-twitter: "\e903",
+    icon-linkedin: "\e904",
+    icon-facebook: "\e902",
+    icon-close: "\e905",
+    icon-arrow-up: "\e906",
+    icon-arrow-right: "\e907",
+    icon-arrow-down: "\e908",
+    icon-arrow-left: "\e909",
+    icon-arrow-long-left: "\e90a",
+    icon-arrow-long-right: "\e90b",
+    icon-user: "\e90c",
+);
+
+@each $icon, $value in $icons {
+    .#{$icon} {
+        @include icon(before, #{$icon}, false);
+    }
+}

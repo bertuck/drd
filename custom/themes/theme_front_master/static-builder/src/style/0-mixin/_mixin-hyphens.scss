@@ -1,0 +1,9 @@
+// https://justmarkup.com/log/2019/01/a-look-at-css-hyphenation-in-2019/
+
+@mixin hyphens() {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}

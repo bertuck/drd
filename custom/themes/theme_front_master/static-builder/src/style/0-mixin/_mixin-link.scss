@@ -1,0 +1,49 @@
+// *
+// * FOCUS . HOVER
+// *
+@mixin hover () {
+  
+    &:focus,
+    &:hover
+    {
+        @content;
+    }
+  
+}
+  
+// *
+// * ACTIVE
+// *
+@mixin active () {
+
+    &:active
+    {
+        @content;
+    
+        &:hover, 
+        &:focus
+        {
+            @content;
+        }
+    } 
+}
+
+// *
+// * Link inverse
+// * 
+@mixin link-inverse () {
+
+    text-decoration: none;
+  
+    &:hover,
+    &:active
+    {
+        text-decoration: underline;
+    }
+  
+    &:focus
+    {
+        text-decoration: none;
+    }
+  
+}

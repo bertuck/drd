@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+// a11y-toggle -- Toggle accessible
+//
+[data-a11y-toggle],
+[data-a11y-toggle-aw]
+{
+    @include icon(after, icon-arrow-down)
+    {
+        display: block;
+
+        position: absolute;
+        top: 50%;
+        right: 1.2rem;
+
+        margin-top: -0.4rem;
+
+        font-size: 0.8rem;
+
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+    }
+
+    &.btn-arrow-no-abs
+    {
+        &::after
+        {
+            display: inline-block;
+            position: relative;
+            top: auto;
+            right: auto;
+
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+    }
+
+    &[aria-expanded='true']
+    {
+        &::after
+        {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &.button-more-minus
+    {
+        appearance: none;
+
+        margin: 0;
+        border: 0;
+        background: none;
+        text-align: left;
+
+        display: block;
+        width: 100%;
+
+        padding: 0.6rem 0 0.6rem 2.3rem;
+
+        transform: none;
+
+        @include icon(after, icon-carre_plus_contour)
+        {
+            top: 1.2rem;
+            left: 0;
+            right: auto;
+            font-size: 1.7rem;
+        }
+
+    &[aria-expanded='true']
+    {
+        &::after
+        {
+            content: '\e92f'; // icon-carre_moins_plein
+            transform: none;
+        }
+    }
+
+        &:focus
+        {
+            outline: 0.1rem dashed $primary-color;
+            outline-offset: -0.1rem;
+        }
+    }
+
+    &.no-arrow
+    {
+        &::after{ display: none !important; }
+    }
+}
+
+//.dropdown[aria-hidden='true'],
+[data-a11y-toggle]:not([aria-controls]),
+[data-a11y-toggle-aw]:not([aria-controls])
+{
+    display: none;
+}
+
+.dropdown
+{
+    display: none;
+
+    position: relative;
+    z-index: 1;
+
+    padding: 2rem;
+
+    background-color: $white;
+
+    ul
+    {
+        margin: 0;
+    }
+
+    &[aria-hidden='false']
+    {
+        display: block;
+    }
+}

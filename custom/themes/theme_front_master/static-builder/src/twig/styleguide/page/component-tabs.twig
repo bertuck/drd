@@ -1,0 +1,43 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Tabs Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Tabs</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>
+                <a href="https://getbootstrap.com/docs/4.1/components/navs/#javascript-behavior" target="_blank">Bootstrap tabs</a>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% embed "../component/tabs/tabs.twig" %}
+        {% block tabContent01 %}
+            Tab content 01 active
+        {% endblock %}
+    {% endembed %}
+    {% set path_code = '../../component/tabs/tabs.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Tabs : connect</h2>
+    {% include "../component/tabs/tabs-connect.twig" %}
+    {% set path_code = '../../component/tabs/tabs-connect.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Tabs : icon</h2>
+    {% include "../component/tabs/tabs-icon.twig" %}
+    {% set path_code = '../../component/tabs/tabs-icon.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

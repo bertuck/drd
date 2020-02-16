@@ -1,0 +1,28 @@
+version: "3.6"
+
+services:
+  httpd:
+    image: "${REGISTRY}/${APP_NAMESPACE}/httpd-testing:${CI_COMMIT_REF_NAME}"
+    build:
+      context: ../../../
+      dockerfile: docker/httpd/Dockerfile.testing
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+        BRANCH: ${CI_COMMIT_REF_NAME}
+    depends_on:
+      - httpd-base
+      - sources-dev
+
+  php:
+    image: "${REGISTRY}/${APP_NAMESPACE}/php-testing:${CI_COMMIT_REF_NAME}"
+    build:
+      context: ../../../
+      dockerfile: docker/php/Dockerfile.testing
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+        BRANCH: ${CI_COMMIT_REF_NAME}
+    depends_on:
+      - php-base
+      - sources-dev

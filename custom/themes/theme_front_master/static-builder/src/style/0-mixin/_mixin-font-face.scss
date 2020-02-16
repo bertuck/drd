@@ -1,0 +1,64 @@
+// Mixins d'import @font-face
+// --------------------------
+
+// Import unitaire fonte
+// usage pour une seule fonte/variante
+// @include sc-import-font(roboto, 'chemin/vers/roboto');
+@mixin sc-import-font($font_name, $font_path, $font_weight: normal, $font_style: normal, $font_display: swap) {
+
+    // $fonte retourne les items de premier niveau
+    $family: quote( #{$font_name} );
+
+    // chemin global du rép des fontes + le chemin de chacune
+    $wf-src: $webfont_path + $font_path;
+
+    @font-face {
+        font-family: $family;
+        // src: url($wf-src + ".eot");
+        // src: url($wf-src + ".eot?#iefix") format('embedded-opentype'),
+        //      url($wf-src + ".woff") format('woff'),
+        //      url($wf-src + ".ttf") format('truetype');
+        src: url($wf-src + '.woff2') format('woff2'),
+             url($wf-src + '.woff') format('woff'),
+             url($wf-src + '.ttf') format('truetype');
+        font-weight: #{$font-weight};
+        font-style: #{$font-style};
+        font-display: #{$font-display};
+
+    }
+
+}
+
+// Import de chaque font de la $fonts-map
+// usage:
+// @sc-import-fonts($ma-map-de-fontes);
+
+// Comment s'appelle la map de fontes du projet ?
+// $map: $fonts-map !default;
+
+@mixin sc-import-fonts($fonts-map) {
+
+    @if ($fonts-map != null) and (type-of($fonts-map) == "map") {
+        @each $variante, $font-details in $fonts-map {
+
+            @if (type-of($font-details) == "list") {
+                @each $font in $font-details {
+                    @include sc-import-font($variante, $font...);
+                }
+            }
+
+            @else if (type-of($font-details) == "map") {
+                @include sc-import-font($variante, $font-details...);
+            }
+
+            @else {
+                @warn "La définition de la map de fontes est mal formée ou incomplète.";
+            }
+        }
+    }
+
+    @else {
+        @warn "$map est vide ou n'existe pas";
+    }
+}
+  

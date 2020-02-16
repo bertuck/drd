@@ -1,0 +1,22 @@
+.dropdown-menu {
+    padding: 2rem 1.5rem;
+
+    border: 0;
+    border-top: solid 0.5rem $primary;
+    border-bottom: solid 0.1rem $primary;
+}
+
+[data-toggle="dropdown"][aria-expanded="true"] {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -0.2rem;
+        left: 0;
+        margin: auto;
+
+        @include triangle(1.8rem, $primary, up);
+    }
+}

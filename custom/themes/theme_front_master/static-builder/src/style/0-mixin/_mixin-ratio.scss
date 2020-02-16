@@ -1,0 +1,39 @@
+@mixin ratio-1by1() {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+@mixin ratio-16by9() {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 56.25%;
+    }
+}
+
+@mixin ratio-custom($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: ($height/$width)*100%;
+    }
+}
+
+@mixin ratio--item() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

@@ -1,0 +1,52 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Popover Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Popover</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>Il faut initialiser les popovers en JS : <a href="https://getbootstrap.com/docs/4.1/components/popovers/#overview" target="_blank">Bootstrap popover</a></p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/popover/popover.twig" %}
+    {% set path_code = '../../component/popover/popover.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Popover dans les formulaires</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Indiquer dans le label qu'il y a une infobulle
+                <br>
+                <code>&lt;label for="[ID]"&gt;Label &lt;span class="sr-only"&gt;Détails dans l'infobulle&lt;/span&gt;&lt;/label&gt;</code>
+            </p>
+            <p>
+                Rappeler le label dans le bouton qui ouvre l'infobulle grâce à un <code>span.sr-only</code> masqué
+                <br>
+                <code>&lt;span class="sr-only"&gt;Infobulle pour : [label]&lt;/span&gt;</code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    <form>
+        {% include "../component/popover/popover-form.twig" %}
+    </form>
+    {% set path_code = '../../component/popover/popover-form.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

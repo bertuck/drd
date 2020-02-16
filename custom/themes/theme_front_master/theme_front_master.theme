@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming.
+ */
+
+use Drupal\Core\Theme\ThemeSettings;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ */
+function theme_front_master_preprocess_html(&$variables) {
+
+}
+
+/**
+ * Hook preprocess node generic.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    $class_name = _theme_front_master_generate_class_name($node->getType());
+    $view_mode = isset($variables['elements']['#view_mode']) && $variables['elements']['#view_mode'] != 'default' ? 'run' . ucfirst($variables['elements']['#view_mode']) : '';
+    $class = "Drupal\theme_front_master\Preprocess\Node\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class, $view_mode);
+}
+
+/**
+ * AW theme master Preprocess Paragraph.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_paragraph(&$variables) {
+    $paragraph = $variables['paragraph'];
+    $class_name = _theme_front_master_generate_class_name($paragraph->getType());
+    $view_mode = isset($variables['elements']['#view_mode']) && $variables['elements']['#view_mode'] != 'default' ? 'run' . ucfirst($variables['elements']['#view_mode']) : '';
+    $class = "Drupal\theme_front_master\Preprocess\Paragraph\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class, $view_mode);
+}
+
+/**
+ * AW theme master Preprocess Taxonomy Term.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_taxonomy_term(&$variables) {
+    $term = $variables['term'];
+    $class_name = _theme_front_master_generate_class_name($term->bundle());
+    $view_mode = isset($variables['elements']['#view_mode']) && $variables['elements']['#view_mode'] != 'default' ? 'run' . ucfirst($variables['elements']['#view_mode']) : '';
+    $class = "Drupal\theme_front_master\Preprocess\Taxonomy\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class, $view_mode);
+}
+
+/**
+ * Hook preprocess views_view.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_views_view(&$variables) {
+    $view = $variables['view'];
+    $class_name = _theme_front_master_generate_class_name($view->id());
+    $class = "Drupal\theme_front_master\Preprocess\View\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class);
+    if($variables['id'] == 'recherche_projets' && $variables['display_id'] == 'page_1'){
+        $variables['exposed'] = \Drupal::formBuilder()->getForm('Drupal\pns_appels_projets\Form\AapSearchForm');
+    }
+}
+
+/**
+ * @param $variables
+ */
+function theme_front_master_preprocess_region(&$variables) {
+    $class_name = _theme_front_master_generate_class_name($variables['region']);
+    $class = "Drupal\theme_front_master\Preprocess\Region\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class);
+}
+
+/**
+ * Hook preprocess views_view_unformatted.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_views_view_unformatted(&$variables) {
+    $view = $variables['view'];
+    $type = ucfirst($view->id());
+    $class = "Drupal\theme_front_master\Preprocess\View\\$type" . "Unformatted";
+    $variables = _theme_front_master_run_preprocess($variables, $class);
+}
+
+/**
+ * @param mixed $variables
+ *   Variables.
+ */
+function theme_front_master_preprocess_menu(&$variables) {
+    $class_name = _theme_front_master_generate_class_name($variables['menu_name']);
+    $class = "Drupal\theme_front_master\Preprocess\Menu\\$class_name";
+    $variables = _theme_front_master_run_preprocess($variables, $class);
+}
+
+/**
+ * Generate class_name base on entity type.
+ *
+ * @param string $type
+ *   Type.
+ *
+ * @return string
+ *   Classname.
+ */
+function _theme_front_master_generate_class_name($type) {
+    $class = '';
+    $items = explode('_', $type);
+    if (count($items) > 1)
+        foreach ($items as $item) {
+            $class .= ucfirst($item);
+        }
+    else
+        $class = ucfirst($type);
+    return $class;
+}
+
+/**
+ * AW theme master Run Preprocess.
+ *
+ * @param mixed $variables
+ *   Variables.
+ * @param string $class
+ *   Class.
+ * @param string $view_mode
+ *   View mode.
+ *
+ * @return mixed
+ *   Mixed.
+ */
+function _theme_front_master_run_preprocess($variables, $class, $view_mode = '') {
+    if (class_exists($class)) {
+        $preprocess = new $class($variables);
+        if (!empty($view_mode) && method_exists($preprocess, $view_mode))
+            $variables = $preprocess->$view_mode();
+        else
+            $variables = $preprocess->run();
+    }
+    return $variables;
+}
+
+/**
+ * Hook preprocess theme_suggestions_page_alter.
+ *
+ * @param array $suggestions
+ *   Suggestions.
+ * @param array $variables
+ *   Variables.
+ */
+function theme_front_master_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+    if(\Drupal::request()->attributes->get('_route') == 'pns_react_dashboard.view') {
+        $suggestions[] = 'page__dashboard';
+    }
+}

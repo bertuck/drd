@@ -1,0 +1,245 @@
+/*
+
+** ATOM - Button
+
+Use full bg or Outline bg and Big or Small and Disabled
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Full bg
+
+<a href="#" class="btn btn-primary" role="button">Link</a>
+<button class="btn btn-primary" type="submit">Button</button>
+<input class="btn btn-primary" type="button" value="Input">
+<input class="btn btn-primary" type="submit" value="Submit">
+<input class="btn btn-primary" type="reset" value="Reset">
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Outline bg
+
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-light">Light</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Big
+
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Small
+
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Disabled <button> or <a>
+
+<button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+<a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Primary link</a>
+
+*/
+
+[role="button"]  
+{
+    cursor: pointer;
+}
+
+html input[disabled]
+{
+    opacity: 0.5;
+}
+
+button
+{
+    appearance: none;
+    
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn
+{
+    appearance: none;
+
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-bottom: 0; // For input.btn
+    padding: 1.4rem 2rem;
+
+    border: 0.1rem solid $black;
+    border-radius: 3rem;
+
+    // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    background-image: none;
+    background-color: $black;
+
+    color: $white;
+    line-height: 1;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none !important;
+    text-transform: none;
+
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    
+    &::first-letter{ text-transform: capitalize; }
+
+    &:active
+    {
+        box-shadow: none;
+    }
+
+    // [class^='icon-']
+    // {
+    //     display: inline-block;
+    //     vertical-align: middle;
+
+    //     margin: 0 0.5rem;
+    // }
+
+    [class^='icon-']
+    {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        margin: 0;
+
+        // + span
+        // {
+        //     padding-left: 2rem;
+        // }
+    }
+
+    &.icon-left
+    {
+        left: 1.5rem;
+    }
+
+    &.icon-right
+    {
+        right: 1.5rem;
+    }
+
+    &:focus, 
+    &:hover
+    {
+        text-decoration: none;
+    }
+}
+
+.btn.focus, 
+.btn:focus
+{
+
+}
+
+.btn.disabled, 
+.btn:disabled,
+button[disabled],
+.disabled
+{
+    // cursor: not-allowed;
+    pointer-events: none;
+
+    box-shadow: none;
+    opacity: .65;
+}
+
+.btn:not(:disabled):not(.disabled)
+{
+    cursor: pointer;
+}
+
+.btn:not(:disabled):not(.disabled).active, 
+.btn:not(:disabled):not(.disabled):active
+{
+    background-image: none;
+}
+
+a.btn.disabled, 
+fieldset:disabled a.btn
+{
+
+}
+
+.btn-link
+{
+
+}
+
+.btn-link:hover
+{
+
+}
+
+.btn-link.focus, 
+.btn-link:focus
+{
+
+}
+
+.btn-link.disabled, 
+.btn-link:disabled
+{
+
+}
+
+.btn-group-lg > .btn, 
+.btn-lg
+{
+    padding: .5rem 1rem;
+
+    border-radius: .3rem;
+    
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.btn-group-sm > .btn, 
+.btn-sm
+{   
+    padding: .25rem .5rem;
+    
+    border-radius: .2rem;
+    
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+.btn-block
+{
+    display: block;
+    width: 100%;
+}
+
+.btn-block + .btn-block
+{
+    margin-top: .5rem;
+}
+
+input[type=button].btn-block, 
+input[type=reset].btn-block, 
+input[type=submit].btn-block
+{
+
+}

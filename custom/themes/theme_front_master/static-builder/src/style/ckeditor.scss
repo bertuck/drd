@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import './0-mixin/__index';
+@import './3-framework/bootstrap-4.3.1/functions';
+@import './0-variable/__index';
+@import './3-framework/__index-vars';
+
+@import './1-base/__index';
+
+// @import './2-utils/__index';
+
+@import "./3-framework/bootstrap-4.3.1/root";
+@import "./3-framework/bootstrap-4.3.1/reboot";
+@import "./3-framework/bootstrap-4.3.1/type";
+@import "./3-framework/bootstrap-4.3.1/images";
+@import "./3-framework/bootstrap-4.3.1/tables";
+// @import "./3-framework/bootstrap-4.3.1/buttons";
+// @import "./3-framework/bootstrap-4.3.1/media";
+
+// @import './4-structure/__index';
+@import './4-structure/typography';
+@import './4-structure/wysiwyg';
+
+
+// specific for ckeditor
+.cke_editable {
+    table {
+        @extend .table;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}

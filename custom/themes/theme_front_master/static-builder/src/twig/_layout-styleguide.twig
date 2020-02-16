@@ -1,0 +1,26 @@
+{% extends "_layout.twig" %}
+
+{% set mainclass = 'sg-main' %}
+
+{% block styles_more %}
+    <link rel="stylesheet" href="./style/styleguide.css" type="text/css" />
+{% endblock %}
+
+{% block scripts_more %}
+    <script type="text/javascript" src="./script/prism.js"></script>
+    <script type="text/javascript">
+        var body = $('body');
+        $('.dropdown').on('show.bs.dropdown', function () {
+            body.addClass('sg-nav-is-open');
+        });
+        $('.dropdown').on('hide.bs.dropdown', function () {
+            body.removeClass('sg-nav-is-open'); 
+        });
+    </script>
+{% endblock %}
+
+{% block sg_header %}
+    {% include "./styleguide/layout/header.twig" %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

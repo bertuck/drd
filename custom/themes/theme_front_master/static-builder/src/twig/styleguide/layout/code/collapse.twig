@@ -1,0 +1,12 @@
+<div class="sg-code">
+    <button class="sg-btn" type="button" data-toggle="collapse" data-target="#collapse_{{collapse_id}}" aria-expanded="false" aria-controls="collapse_{{collapse_id}}">
+        <span>Code HTML</span>
+    </button>
+
+    <div class="collapse" id="collapse_{{collapse_id}}">
+        {# 
+            script tag needed for prism JS (write markup without having to escape anything) see: https://prismjs.com/plugins/unescaped-markup/
+        #}
+        <script type="text/plain" class="language-twig">{% include path_code %}</script>
+    </div>
+</div>

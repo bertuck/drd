@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Groupe_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 381.5 248" style="enable-background:new 0 0 381.5 248;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#F01E1E;}
+		.st1{font-family:'montserrat';font-weight:600;}
+		.st2{font-size:22px;}
+		.st3{fill:#A3A3A3;}
+		.st4{font-size:16px;}
+		.st5{opacity:0.35;}
+		.st6{fill:#D6D6D6;}
+		.st7{font-family:'montserrat';font-weight:900;}
+		.st8{font-size:200.0015px;}
+	</style>
+	<g>
+		<text id="Montserrat_SemiBold" transform="matrix(1 0 0 1 30.204 112.207)" class="st0 st1 st2">Montserrat SemiBold</text>
+		<text transform="matrix(1 0 0 1 30.204 141.207)" class="st3 st1 st4">A B C D E F G H I J K L M N O P</text>
+		<text transform="matrix(1 0 0 1 30.204 160.407)" class="st3 st1 st4">a b c d e f g h i j k l m n o p</text>
+		<text transform="matrix(1 0 0 1 30.204 179.607)" class="st3 st1 st4">0 1 2 3 4 5 6 7 8 9</text>
+	</g>
+	<g>
+		<defs>
+			<path id="Rectangle_arrondi_1" d="M8.5,2.5h304c3.3,0,6,2.7,6,6v231c0,3.3-2.7,6-6,6H8.5c-3.3,0-6-2.7-6-6V8.5
+				C2.5,5.2,5.2,2.5,8.5,2.5z"/>
+		</defs>
+		<clipPath id="Rectangle_arrondi_1_1_">
+			<use xlink:href="#Rectangle_arrondi_1"  style="overflow:visible;"/>
+		</clipPath>
+		<g id="aA" class="st5">
+			<text transform="matrix(1 0 0 1 98.5234 216.0938)" class="st6 st7 st8">aA</text>
+		</g>
+	</g>
+</svg>

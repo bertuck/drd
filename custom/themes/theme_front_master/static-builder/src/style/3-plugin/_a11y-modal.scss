@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// modal.scss -- Modal / Dialog Access
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// SOURCE
+// https://github.com/edenspiekermann/a11y-dialog
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+.dialog
+{
+    &[aria-hidden="true"] 
+    {
+        display: none;
+    }
+
+    h1, .h1
+    {
+        margin-top: 0;
+    }
+}
+  
+.dialog-content 
+{
+    animation: modal_anim 0.3s $bezier;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10004;
+    
+    padding: 3.5rem 5.5rem;
+    
+    width: 90%;
+    max-width: 100rem;
+
+    border: 0;
+    border-radius: 1rem;
+    
+    background-color: $white;
+    
+    transform: translate(-50%, -50%);
+}
+
+.dialog-small
+{
+    .dialog-content
+    {
+        max-width: 60rem;
+        width: 100%;
+    }
+}

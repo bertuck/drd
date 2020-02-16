@@ -1,0 +1,61 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//
+// @include center-x()
+// @include center-y()
+// @include center-xy()
+//
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@mixin center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-xy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//  *
+//  * For center verticaly
+//  *
+//  * @mixin
+//  * @example
+//  *  @include vcenter;
+//  *
+@mixin vcenter 
+{
+    white-space: nowrap;
+    word-spacing: -0.25em;
+
+    &::before,
+    > .in
+    {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &::before
+    {
+        content: '';
+        width: 0;
+        height: 100%;
+    }
+
+    > .in
+    {
+        width: 100%;
+
+        white-space: normal;
+        word-spacing: normal;
+    }
+}

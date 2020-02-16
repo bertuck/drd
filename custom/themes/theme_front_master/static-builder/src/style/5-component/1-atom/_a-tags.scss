@@ -1,0 +1,30 @@
+.a-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.a-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+
+    width: 14.2rem;
+    height: 4rem;
+
+    font-size: 1.3rem;
+    line-height: normal;
+    text-align: center;
+
+    border-radius: 0.5rem;
+
+    color: $primary;
+    background-color: $white;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

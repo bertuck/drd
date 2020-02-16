@@ -1,0 +1,227 @@
+.header--principal {
+    padding: $header-padding-y $header-padding-x;
+
+    background-color: $body-bg;
+}
+
+.header--principal-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-brand {
+    display: flex;
+}
+
+.header-logo-wrapper {
+    flex: 0 0 4.6rem;
+    max-width: 4.6rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.header-logo-link {
+    display: block;
+}
+
+.header-title-wrapper {
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.header-title {
+    margin-bottom: 0;
+
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: inherit;
+    text-transform: uppercase;
+    color: $primary;
+}
+
+.header-account {
+    margin-left: 1rem;
+}
+
+.btn-account {
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: $primary;
+    word-break: break-word;
+    width: 150px;
+    &-text {
+        margin-left: 0.5rem;
+        font-weight: 500;
+        text-transform: none;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        vertical-align: middle;
+    }
+}
+
+.header-select-menu,
+.menu-account {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+
+    &-item {
+        .btn-login,
+        a {
+            text-decoration: none;
+
+            @include hover-focus {
+                text-decoration: underline;
+            }
+        }
+    }
+    .from-login-custom {
+        .form-group-submit {
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.header-select {
+    margin-left: auto;
+    padding-right: 2rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 0.1rem;
+        height: 1.2rem;
+        background-color: $gray-600;
+    }
+
+    .header-select-btn {
+        position: relative;
+        margin-left: 2rem;
+        padding: 1rem;
+
+        text-transform: none;
+        text-align: left;
+        line-height: normal;
+
+        color: $gray-600;
+
+        border: solid 0.1rem $border-color;
+
+        @include dropdown-arrow();
+    }
+}
+
+.header-baseline {
+    display: none;
+
+    padding-left: 1.5rem;
+    line-height: normal;
+
+    &-title {
+        margin-bottom: 0;
+        font-weight: 700;
+        color: $primary;
+    }
+
+    &-desc {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        color: $gray-600;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .header--principal {
+        padding-right: $burger-width + 1rem;
+
+        .home & {
+            padding-right: $header-padding-x;
+        }
+    }
+
+    .header--principal-inner {
+        max-width: none;
+    }
+
+    .btn-account-text {
+        @include sr-only;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .header-baseline {
+        display: block;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .header--principal {
+        padding: $header-padding-y-large $header-padding-x-large 1.5rem $header-padding-x-large;
+
+        .home & {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    .header--principal-inner {
+        position: relative;
+        padding-top: 1.4rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1.5rem;
+            left: $grid-gutter-width*0.5;
+            right: $grid-gutter-width*0.5;
+            border-bottom: solid 0.1rem $brand-2;
+        }
+
+        .home & {
+            padding-top: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .header-logo-wrapper {
+        position: absolute;
+        top: $header-pos-y-large;
+        left: $header-pos-x-large;
+        z-index: 101;
+
+        flex: 0 0 $logo-width-large;
+        max-width: $logo-width-large;
+
+        .home & {
+            position: static;
+            margin: 0;
+
+            flex: 0 0 9rem;
+            max-width: 9rem;
+        }
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .header-baseline {
+        padding-left: $logo-width-large + 1.5rem;
+    }
+
+    .header-select-btn {
+        min-width: 22rem;
+    }
+}

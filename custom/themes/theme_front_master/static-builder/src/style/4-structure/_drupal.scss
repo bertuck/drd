@@ -1,0 +1,19 @@
+.adminimal-admin-toolbar.user-logged-in {
+    .region-top {
+        position: relative;
+    }
+
+    .body-wrapper {
+        padding-top: 0;
+    }
+}
+
+#messages-box {
+    margin: 2rem 0 !important;
+}
+
+#messages div.cool-messages.messages {
+    background: none!important;
+    color: inherit;
+    text-shadow: none;
+}

@@ -1,0 +1,41 @@
+<form class="form form-search-and-add-item">
+    <fieldset>
+        <legend class="sr-only">Rechercher un enfant déjà déclaré ou déclarer un nouvel enfant</legend>
+   
+        <div class="block-search-and-add-item">
+            <div class="block-search-and-add-item--input">
+                {% include '../input-group/input-group.twig' %}
+            </div>
+            <div class="block-search-and-add-item--text">
+                <p>ou</p>
+            </div>
+            <div class="block-search-and-add-item--button">
+                <button type="button" class="btn btn-secondary btn-icon-left">
+                    <span class="icon-ajouter-un-nouvel-enfant" aria-hidden="true"></span>
+                    Déclarer un nouvel enfant
+                </button>
+            </div>
+        </div>
+     </fieldset>
+</form>
+
+<form class="form form-search-and-add-item disabled">
+    <fieldset>
+        <legend class="sr-only">Rechercher un enfant déjà déclaré ou déclarer un nouvel enfant</legend>
+   
+        <div class="block-search-and-add-item">
+            <div class="block-search-and-add-item--input">
+                {% include '../input-group/input-group--disabled.twig' %}
+            </div>
+            <div class="block-search-and-add-item--text">
+                <p>ou</p>
+            </div>
+            <div class="block-search-and-add-item--button">
+                <button type="button" class="btn btn-secondary btn-icon-left" disabled>
+                    <span class="icon-ajouter-un-nouvel-enfant" aria-hidden="true"></span>
+                    Déclarer un nouvel enfant
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,212 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Block Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Block</h2>
+{% endblock %}
+
+{% block main %}
+
+    <h2 class="sg-title" id="Block-Bordered">Block Bordered</h2>
+    {% include "../component/block/block-bordered.twig" %}
+    {% set path_code = '../../component/block/block-bordered.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    {% include "../component/block/block-bordered-bglight.twig" %}
+    {% set path_code = '../../component/block/block-bordered-bglight.twig' %}
+    {% set collapse_id = '001' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-Highlight-Link">Block Highlight Link</h2>
+    {% include "../component/block/block-highlight-link.twig" %}
+    {% set path_code = '../../component/block/block-highlight-link.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-search-and-add-item">Block Search and add item</h2>
+    {% include "../component/block/block-search-and-add-item.twig" %}
+    {% set path_code = '../../component/block/block-search-and-add-item.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-upload-file">Block upload file</h2>
+    {% include "../component/block/block-upload-file.twig" %}
+    {% set path_code = '../../component/block/block-upload-file.twig' %}
+    {% set collapse_id = '03' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Variante</h3>
+            <p>En ajoutant la class <code>.block-upload-file--xs</code>, les items se disposent en 3 colonnes et les espaces sont diminués</p>
+            <p>A utiliser dans des espaces plus serrés comme sur la page <a href="33-01.html">33.parcours pro - 1ere connexion_structure</a>.</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-upload-file--xs.twig" %}
+    {% set path_code = '../../component/block/block-upload-file--xs.twig' %}
+    {% set collapse_id = '03-01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-upload-file-uploaded">Block upload file uploaded</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>Dans le bouton "Renommer" il faut rappeler le titre du fichier dans un <code>span.sr-only</code>.</p>
+            <p>
+                Si un bouton contient uniquement une icône, il faut lui ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action.
+                <br>
+                <code>
+                    &lt;button type="button" class="btn btn-actions" title="Modifier le document [nom du document]"&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="icon-modifier" aria-hidden="true"&gt;&lt;/span&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="sr-only"&gt;Modifier le document [nom du document]&lt;/span&gt;
+                    <br>&lt;/button&gt;
+                </code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-upload-file--uploaded.twig" %}
+    {% set path_code = '../../component/block/block-upload-file--uploaded.twig' %}
+    {% set collapse_id = '03-02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-upload-and-drag">Block upload and drag</h2>
+    {% include "../component/block/block-upload-and-drag-00.twig" %}
+    {% set path_code = '../../component/block/block-upload-and-drag-00.twig' %}
+    {% set collapse_id = '04' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>Ajouter la class <code>.is-hover</code> sur la <code>div.block-upload-and-drag</code> quand on glisse un fichier et qu'on survole la zone.</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-upload-and-drag-00-hover.twig" %}
+    {% set path_code = '../../component/block/block-upload-and-drag-00-hover.twig' %}
+    {% set collapse_id = '041' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Le bouton <code>annuler</code> doit prendre dans son <code>.sr-only</code> le nom du fichier
+                <br>
+                Le bouton <code>valider</code> doit prendre dans son <code>.sr-only</code> le nom du fichier
+            </p>
+            <p>
+                Le bouton <code>recommencer</code> est lié avec un <code>aria-describedby</code> à l'id de l'erreur.
+                <br>
+                Cela a pour but, d'expliquer l'erreur quand il y en a une.
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-upload-and-drag-01.twig" %}
+    {% set path_code = '../../component/block/block-upload-and-drag-01.twig' %}
+    {% set collapse_id = '05' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    {% include "../component/block/block-upload-and-drag-02.twig" %}
+    {% set path_code = '../../component/block/block-upload-and-drag-02.twig' %}
+    {% set collapse_id = '06' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-create-account-item">Block create account item</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>Le titre est lié avec un <code>aria-describedby</code> à l'id de l'état du compte.</p>
+            <p>Pour chaque bouton avec icône, il faut ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action et rappeler le titre.</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-create-account-item.twig" %}
+    {% set path_code = '../../component/block/block-create-account-item.twig' %}
+    {% set collapse_id = '07' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-create-account-item-toggle">Block create account item toggle</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>Le titre <em>("François MEUNIER")</em> est lié avec un <code>aria-describedby</code> à l'id de l'icône indiquant le status du compte.</p>
+            <p>Pour chaque bouton avec icône, il faut ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action et rappeler le titre.</p>
+            <p>Quand on clique sur le bouton pour déplier le bloc, en JS, nous avons ajouter un comportement pour suivre la créa (ajout de class). <br>(cf : app.js + app/collapse.js )
+                <br>Il faut également changer le wording "Déplier" en "Replier".
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-create-account-item--toggle.twig" %}
+    {% set path_code = '../../component/block/block-create-account-item--toggle.twig' %}
+    {% set collapse_id = '08' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-create-account-item-suivi-toggle">Block create account item suivi toggle</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>Le titre <em>("Votre demande n°X")</em> est lié avec un <code>aria-describedby</code> à l'id du status du dossier.</p>
+            <p>Pour chaque bouton avec icône, il faut ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action et rappeler le titre.</p>
+            <p>Quand on clique sur le bouton pour déplier le bloc, en JS, nous avons ajouter un comportement pour suivre la créa (ajout de class). <br>(cf : app.js + app/collapse.js )
+                <br>Il faut également changer le wording "Déplier" en "Replier".
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-create-account-item--suivi.twig" %}
+    {% set path_code = '../../component/block/block-create-account-item--suivi.twig' %}
+    {% set collapse_id = '081' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-create-account-item-card-table">Block create account item card table</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>
+                Ce composant est utilisé en mobile à la place du <a href="component-table.html#table-into-cards">tableau "table into cards"</a>.
+            <br>En situation sur la page <a href="51.html">51.mon suivi_professionnel</a>
+            </p>
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>Voir le composant <a href="#Block-create-account-item-toggle">#Block-create-account-item-toggle</a></p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/block/block-create-account-item--card-table.twig" %}
+    {% set path_code = '../../component/block/block-create-account-item--card-table.twig' %}
+    {% set collapse_id = '09' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="Block-recap">Block recap</h2>
+    {% include "../component/block/block-recap.twig" %}
+    {% set path_code = '../../component/block/block-recap.twig' %}
+    {% set collapse_id = '10' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

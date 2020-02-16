@@ -1,0 +1,26 @@
+<div class="card">
+    <a href="{{ card_link_href }}">
+        {% if card_img_src %}
+        <div class="card-img-top">
+            <img src="{{ card_img_src }}" alt="">
+        </div>
+        {% endif %}
+        {% if card_svg_src %}
+        <div class="card-svg-top">
+            <svg src="{{ card_svg_src }}" class="inline-svg"></svg>
+        </div>
+        {% endif %}
+        <div class="card-body">
+            {% if card_title %}
+            <h3 class="card-title">
+                {{ card_title }}
+            </h3>
+            {% endif %}
+            {% if card_text %}
+            <p class="card-text">
+                {{ card_text }}
+            </p>
+            {% endif %}
+        </div>
+    </a>
+</div>

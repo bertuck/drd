@@ -1,0 +1,55 @@
+.m-clap {
+    margin: 3rem 0;
+    // display: flex;
+    // justify-content: flex-end;
+    text-align: right;
+}
+
+.m-clap-item {
+    @include reset-btn;
+
+    flex: 1 0 auto;
+
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 5.8rem;
+        height: 5.8rem;
+
+        font-size: 3.2rem;
+
+        color: $green;
+
+        border: solid 0.1rem $border-color;
+        border-radius: 100%;
+
+        transition: background 250ms ease, color 250ms ease;
+    }
+}
+
+.m-clap-text {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: $gray-600;
+}
+
+.m-clap-item--on {
+    @include hover-focus {
+        .m-clap-text {
+            text-decoration: underline;
+        }
+    }
+}
+
+.m-clap-item--off {
+    .icon {
+        background-color: $green;
+        color: $white;
+    }
+}

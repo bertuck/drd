@@ -1,0 +1,167 @@
+//  *
+//  * @example
+//  *  @include reset-list();
+//  *  <ul class="reset-list"> ... </ul>
+//  *
+@mixin reset-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li,
+    ul li {
+        padding-left: 0;
+
+        &:before {
+            content: "";
+            display: none;
+            margin: 0;
+        }
+    }
+}
+
+//  * Reset list only Level 1
+//  *
+//  * @example
+//  *  @include reset-list--l1();
+//  *  <ul class="reset-list--l1"> ... </ul>
+//  *
+@mixin reset-list--l1() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        padding-left: 0;
+
+        &:before {
+            content: "";
+            display: none;
+            margin: 0;
+        }
+    }
+}
+
+//  *
+//  * @example
+//  *  @include list-ul(red);
+//  *  @include list-ol(green);
+//  *
+@mixin list-ul($color: inherit, $level1: false, $level2: false, $level3: false, $styles: false) {
+    list-style: none; // level 1
+
+    li {
+        position: relative;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+
+        &:before {
+            content: "-";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            color: $color;
+            font-size: inherit;
+            margin-right: 4px;
+            /* Screenreaders should ignore that kind of elements =========== */
+            -webkit-alt: "";
+            speak: none;
+        }
+        // @if $styles {
+        //     @include icon(before, $level1) {
+        //         color: $color;
+        //     }
+        // }
+    }
+
+    // level 2
+    ul {
+        margin-top: .5rem;
+        margin-bottom: 0;
+
+        li {
+            margin-bottom: .5rem;
+            padding-left: 1.5rem;
+            &:before {
+                content: "-";
+            }
+            @if $styles {
+                @include icon(before, $level2) {
+                    color: $color;
+                }
+            }
+        }
+    }
+
+    // level 3
+    ul ul li {
+        padding-left: 1.5rem;
+        &:before {
+            content: "-";
+        }
+        @if $styles {
+            @include icon(before, $level3) {
+                color: $color;
+            }
+        }
+    }
+}
+
+@mixin list-ol($color: inherit) {
+    list-style: none;
+    counter-reset: list; // level 1
+
+    > li {
+        counter-increment: list;
+        counter-reset: subsection;
+        position: relative;
+        margin-bottom: .5rem;
+        padding-left: 2rem;
+
+        &:before {
+            content: counter(list, decimal) ". ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: inherit;
+            color: $color;
+        }
+
+        // level 2
+        ol {
+            counter-reset: sublist;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+
+            li {
+                counter-increment: sublist;
+                margin-bottom: .5rem;
+                padding-left: 3rem;
+
+                &:before {
+                    content: counter(list, decimal) "." counter(sublist, decimal) ".";
+                    color: $color;
+                }
+            }
+        }
+
+        // level 3
+        ol ol {
+            counter-reset: subsublist;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+
+            li {
+                counter-increment: subsublist;
+                margin-bottom: .5rem;
+                padding-left: 4rem;
+
+                &:before {
+                    content: counter(list, decimal) "." counter(sublist, decimal) "." counter(subsublist, decimal) ".";
+                    color: $color;
+                }
+            }
+        }
+    }
+}

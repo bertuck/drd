@@ -1,0 +1,23 @@
+.a-scroll-top
+{
+    display: block;
+
+    margin: 7rem auto;
+
+    width: 4.4rem;
+    height: 4.4rem;
+
+    border: 0.2rem solid;
+    color: $primary-color;
+
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    @include hover
+    {
+       color: $white;
+       background-color: $primary-color; 
+       border-color: $primary-color; 
+
+       outline-color: $primary-color;
+    }
+}

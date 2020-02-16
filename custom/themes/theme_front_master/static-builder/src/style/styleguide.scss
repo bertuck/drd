@@ -1,0 +1,495 @@
+@charset "UTF-8";
+
+@import './0-mixin/__index';
+@import './0-variable/__index';
+
+@import "./3-framework/bootstrap-4.3.1/functions";
+@import "./3-framework/bootstrap-4.3.1/variables";
+
+@import "./3-plugin/prism/prism";
+
+.sg-nav-is-open {
+    .sg-body-wrapper {
+        background-color: #7B7B7B !important;
+    }
+    .sg-main {
+        opacity: 0.3;
+    }
+}
+
+.sg-divider {
+    display: block;
+    width: 100%;
+    height: 1rem;
+}
+
+.sg-header {
+    max-width: 100%;
+    background-color: $white;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+
+        font-size: 2.4rem;
+
+        &::before {
+            display: none;
+        }
+
+        span {
+            display: block;
+
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: $secondary;
+        }
+    }
+
+    .dropdown {
+        position: static;
+        display: inline-block;
+        margin: 0 2rem;
+    }
+
+    button {
+        position: relative;
+        border: 0;
+
+        text-align: left;
+        text-transform: none;
+
+        &:focus,
+        &:hover,
+        &:active {
+            color: $secondary;
+
+            span + span {
+                text-decoration: underline;
+            }
+        }
+
+        &[data-toggle="dropdown"] {
+            padding: 1rem 5rem 1rem 2rem;
+
+            [class^="icon"] {
+                display: block;
+
+                position: absolute;
+                top: 50%;
+                right: 2rem;
+
+                margin-top: 0.2rem;
+
+                font-size: 1.2rem;
+
+                transform: translateY(-50%) rotate(0deg);
+                transform-origin: center;
+                transition: transform 0.3s ease;
+            }
+
+            &::after {
+                display: none !important;
+            }
+        }
+
+        &[data-toggle="modal"] {
+            padding: 1rem 2rem;
+
+            [class^="icon"] {
+                display: inline-block;
+                padding-right: 0.6rem;
+                font-size: 1.6rem;
+            }
+        }
+
+        &[aria-expanded='true'] {
+            [class^="icon"] {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 10rem !important;
+        left: 0;
+        right: 0;
+        transform: translate3d(0px, 0px, 0px) !important;
+
+        padding: 3rem;
+
+        float: none;
+        border: 0;
+        box-shadow: none;
+
+        ul {
+            margin-bottom: 0rem;
+            margin-left: 2rem;
+
+            li {
+                padding-left: 0rem;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        li {
+            &:last-child {
+                margin-bottom: 0rem;
+            }
+        }
+    }
+
+    &--in {
+        position: relative; // pour que les collapse fassent 100%
+
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+    }
+
+    &--nav {
+        display: flex;
+        align-items: flex-end;
+        max-width: 100%;
+    }
+
+    &--logo-aw {
+        width: 12.6rem;
+
+        img {
+            @include img-fluide;
+        }
+    }
+}
+
+.sg-body-wrapper {
+    background-color: #F1F1F1 !important;
+
+    .sg-header {
+        @include aw-make-col-ready;
+    }
+
+    .sg-header {
+        padding: 2.8rem 4.4rem;
+
+        @include tablet {
+            @include aw-make-col(12);
+        }
+    }
+}
+
+.sg-nav {
+    margin-bottom: 2rem;
+
+    > a {
+        display: block;
+        margin-bottom: 1rem;
+
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $secondary;
+    }
+}
+
+.sg-header--nav---link {
+    display: inline-block;
+    margin: 0 2rem;
+    padding: 0.6rem 2rem 0.8rem 2rem;
+    font-weight: 500;
+
+    transform: translateY(0.3rem);
+}
+
+.sg-header + .sg-title {
+    padding-top: 1.6rem;
+    background-color: $gray-400;
+}
+
+.sg-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    padding: 2rem;
+    margin-bottom: 0;
+
+    &::before,
+    &::after {
+        display: none !important;
+    }
+
+    @include desktop {
+        font-size: 7rem;
+    }
+}
+
+.sg-main > .sg-title {
+    padding-left: 0;
+}
+
+@include desktop-xl {
+    .sg-main > .sg-title,
+    .sg-title ~ .sg-title {
+        padding-left: 0;
+        font-size: 5rem;
+    }
+}
+
+.sg-card-section {
+    @include aw-make-row(30px);
+}
+
+.sg-card-item {
+    @include aw-make-col-ready(30px);
+
+    @include mobile {
+        @include aw-make-col(6);
+    }
+
+    @include desktop {
+        @include aw-make-col(4);
+    }
+
+    display: flex;
+    margin-bottom: $grid-gutter-width;
+
+    .card {
+        overflow: hidden;
+
+        width: 100%;
+        border: 0;
+    }
+
+    a {
+        display: block;
+        height: 100%;
+
+        border: 0.1rem solid $gray-400;
+        text-decoration: none;
+
+        transition: color 0.3s ease, border 0.3s ease;
+
+        &:hover {
+            border-color: $secondary;
+
+            .card-img-top,
+            .card-svg-top {
+                border-bottom-color: $secondary;
+            }
+        }
+    }
+
+    .card-img-top,
+    .card-svg-top {
+        display: flex;
+        align-items: center;
+
+        position: relative;
+        overflow: hidden;
+
+        height: 23rem;
+
+        border-bottom: 0.1rem solid $gray-400;
+        transition: color 0.3s ease, border 0.3s ease;
+
+        svg {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .card-title {
+        margin-bottom: 0;
+
+        &::after { display: none; }
+    }
+
+    .card-body {
+        padding: 3rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+}
+
+.sg-code {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+
+    border: 0.2rem dashed $gray-400;
+    background-color: $white;
+
+    + .sg-title {
+        margin-top: 5rem;
+    }
+}
+
+.sg-btn,
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+    display: block;
+
+    padding: 1rem;
+    width: 15rem;
+
+    border: 0.2rem solid $primary;
+
+    background-color: transparent;
+
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $black;
+
+    cursor: pointer;
+
+    @include hover-focus {
+        outline-color: $black;
+        color: $black;
+    }
+}
+
+.sg-btn {
+    width: 15rem;
+
+    @include icon(after, icon-arrow_down) {
+        display: inline-block;
+
+        font-size: 50%;
+
+        transform-origin: center;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: middle;
+
+        margin-right: 1rem;
+    }
+
+    &[aria-expanded="true"] {
+        &::after {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+// prism - highlight syntax - copy button
+// reset prism CSS
+div.code-toolbar > .toolbar {
+    top: 0;
+    right: 0;
+
+    opacity: 1;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+    width: auto;
+
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.sg-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > [class^='icon'] {
+        width: 25%;
+
+        margin: 0;
+        padding: 2rem;
+
+        border: 1rem solid transparent;
+        outline: 0.1rem solid $gray-400;
+
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .icon-name {
+        display: block;
+        margin-top: 1rem;
+
+        font-size: 1.2rem;
+        font-family: $font-family-base !important;
+    }
+}
+
+.sg-callout {
+    position: relative;
+    margin: 2rem 0 3rem 0;
+    padding: 3rem;
+
+    border-style: solid;
+    border-width: 0.1rem;
+
+    &-warning {
+        background-color: #e2e3e5;
+        border-color: #d6d8db;
+
+        &::before {
+            color: #d6d8db;
+        }
+    }
+
+    &-info {
+        background-color: #C8E0F9;
+        border-color: #a2cffd;
+    }
+
+    h2 {
+        &::after { display: none; }
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    p a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    code {
+        display: inline-block;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        background: rgba($white, 0.7);
+    }
+}
+
+.sg-grid {
+    // Compensate .row negative margins
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    // Bootstrap grid examples style
+    [class*="col-"] {
+        margin-bottom: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        background-color: rgba(86,61,124,.15);
+        border: 1px solid rgba(86,61,124,.2);
+    }
+}

@@ -1,0 +1,39 @@
+<form>
+    <div class="block-upload-and-drag">
+
+        <div class="block-upload-and-drag--drag">
+            <span class="icon-drag-n-drop" aria-hidden="true"></span>
+            <p>Glisser/déposer ici votre fichier</p>
+        </div>
+
+        <div class="block-upload-and-drag--text">
+            <p>ou</p>
+        </div>
+
+        <div class="block-upload-and-drag--upload">
+            <input type="file" id="file" class="sr-only" aria-describedby="uploadDescription">
+            <label for="file" class="btn btn-secondary">Parcourir</label>
+        </div>
+
+    </div>
+
+    <div class="block-upload-and-drag-description">
+        <div class="row">
+            <div class="col-lg-3 col-xl-2">
+
+                <img src="img/table.svg" alt="" class="img-thumbnail d-none d-lg-block">
+
+            </div>
+            <div class="col-lg-9 col-xl-10">
+
+                <div class="description" id="uploadDescription">
+                    <p>Assurez-vous que les documents transmis sont <strong>lisibles</strong>, <strong>nets</strong> et ne sont <strong>pas tronqués</strong>.<br>
+                    Dans le cas contraire, le délai de traitement de votre dossier pourra être allongé.</p>
+                    <p><strong>Formats acceptés :</strong> jpeg, png, pdf<br>
+                    <strong>Taille max. :</strong> 4 Mo</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

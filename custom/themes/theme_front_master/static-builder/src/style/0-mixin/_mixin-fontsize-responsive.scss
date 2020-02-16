@@ -1,0 +1,25 @@
+//  *
+//  * Responsive typography.
+//  * https://codepen.io/brob/pen/dWpZBd?editors=0110 > > > > check
+//  * http://codepen.io/jakobud/pen/LyZJRB
+//  * http://codepen.io/MadeByMike/pen/YPJJYv
+//  * https://github.com/grahm/responsive-properties
+//  *
+//  * @mixin
+//  * @section Font
+//  * @example
+//  * @include fontSize(16, 24, 460, 1300);
+@mixin fontSize($min, $max, $minScreen, $maxScreen) {
+
+    font-size: #{$min}rem;
+  
+    @media (max-width: #{$maxScreen}em) and (min-width: #{$minScreen}em)
+    {
+        font-size: calc(#{$min}rem + (#{$max} - #{$min}) * (100vw - #{$minScreen}em) / (#{$maxScreen} - #{$minScreen}));
+    }
+  
+    @media (min-width: #{$maxScreen}em) {
+        font-size: #{$max}rem;
+    }
+  
+}

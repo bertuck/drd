@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override for a 'checkboxes' #type form element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The rendered checkboxes.
+ *
+ * @see template_preprocess_checkboxes()
+ */
+ @todo: remove this file once https://www.drupal.org/node/1819284 is resolved.
+ This is identical to core/modules/system/templates/container.html.twig
+#}
+{% if dropdown %}
+    <div class="dropdown-menu form-dispositif-aide-filters-dropdown-menu" aria-labelledby="dropdownFilters01">
+        <div class="form-group form-group-custom-control">
+            {{ children }}
+        </div>
+    </div>
+{% else %}
+    <div{{ attributes.addClass('form-checkboxes') }}>{{ children }}</div>
+{% endif %}

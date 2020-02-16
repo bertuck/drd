@@ -1,0 +1,185 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Accueil' %}
+{% set bodyclass = 'sg-body-wrapper index' %}
+
+{% block main %}
+
+    <div class="sg-card-section">
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-logotype.html',
+                card_img_src : './img/logo-bdt.png', 
+                card_title : 'Logotype',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-typography.html',
+                card_img_src : '',
+                card_svg_src : 'typography.svg',
+                card_title : 'Typography',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-typography.html#Font-icon',
+                card_img_src : './img/styleguide/picto.svg',
+                card_title : 'Pictogram',
+                card_text : ''
+            } %}
+        </div>
+
+        {# <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-typography.html',
+                card_img_src : './img/styleguide/color.svg',
+                card_title : 'Couleur',
+                card_text : ''
+            } %}
+        </div> #}
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-grid.html',
+                card_img_src : './img/styleguide/grid.svg',
+                card_title : 'Grille',
+                card_text : ''
+            } %}
+        </div>
+
+         <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-block.html',
+                card_img_src : './img/styleguide/block.svg',
+                card_title : 'Block',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-modal.html',
+                card_img_src : './img/styleguide/modal.svg',
+                card_title : 'Modal',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-form.html',
+                card_img_src : './img/styleguide/form.svg', 
+                card_title : 'Form',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-progress.html',
+                card_img_src : './img/styleguide/progress-bar.svg',
+                card_title : 'Progress bar',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-button.html',
+                card_img_src : './img/styleguide/button.svg',
+                card_title : 'Button',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-tabs.html',
+                card_img_src : './img/styleguide/tabs.svg',
+                card_title : 'Tabs',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-breadcrumb.html',
+                card_img_src : './img/styleguide/breadcrumb.svg',
+                card_title : 'Breadcrumb',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-input-group.html',
+                card_img_src : './img/styleguide/input.svg',
+                card_title : 'Input group',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-table.html',
+                card_img_src : './img/styleguide/table.svg',
+                card_title : 'Table',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-popover.html',
+                card_img_src : './img/styleguide/popover.svg',
+                card_title : 'Popover',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-datepicker.html', 
+                card_img_src : './img/styleguide/datepicker.svg',
+                card_title : 'Datepicker',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-typeahead.html',
+                card_img_src : './img/styleguide/typeahead.svg',
+                card_title : 'Typeahead',
+                card_text : ''
+            } %}
+        </div>
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-pagination.html',
+                card_img_src : './img/styleguide/pagination.svg',
+                card_title : 'Pagination',
+                card_text : ''
+            } %} 
+        </div> 
+
+        <div class="sg-card-item">
+            {% include "../component/card/card.twig" with {
+                card_link_href : 'component-alert.html',
+                card_img_src : './img/styleguide/alert.svg',
+                card_title : 'Alert', 
+                card_text : ''
+            } %}
+        </div>
+
+    </div>
+    {# / sg-card-section #}
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Button Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Button</h2>
+{% endblock %}
+
+{% block main %}
+
+    <h2 class="sg-title" id="button">Button</h2>
+    {% include "../component/button/button.twig" %}
+    {% set path_code = '../../component/button/button.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="button-outline">Button outline</h2>
+    {% include "../component/button/button-outline.twig" %}
+    {% set path_code = '../../component/button/button-outline.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="button-icon">Button icon</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Si un bouton contient uniquement une icône, il faut lui ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action.
+                <br>
+                <code>
+                    &lt;button type="button" class="btn btn-actions" title="Modifier le document [nom du document]"&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="icon-modifier" aria-hidden="true"&gt;&lt;/span&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="sr-only"&gt;Modifier le document [nom du document]&lt;/span&gt;
+                    <br>&lt;/button&gt;
+                </code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/button/button-icon.twig" %}
+    {% set path_code = '../../component/button/button-icon.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="button-group">Button group</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Pour le bouton suivant et précédent, il faut préciser dans un <code>span.sr-only</code> le numéro et le nom de l'étape.
+                <br>
+                <code>
+                    &lt;button type="button" class="btn btn-outline-primary btn-icon-right btn-next"&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="btn-text"&gt;Suivant&lt;/span&gt;&lt;span class="sr-only"&gt; : aller à l'étape [n° et nom de l'étape]&lt;/span&gt;
+                    <br>&nbsp;&nbsp;&nbsp;&lt;span class="icon-arrow-double-right" aria-hidden="true"&gt;&lt;/span&gt;
+                    <br>&lt;/button&gt;
+                </code>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/button/button-group.twig" %}
+    {% set path_code = '../../component/button/button-group.twig' %}
+    {% set collapse_id = '03' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="button-center">Button center</h2>
+    {% include "../component/button/button-center.twig" %}
+    {% set path_code = '../../component/button/button-center.twig' %}
+    {% set collapse_id = '04' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="button-download">Button download</h2>
+    {% include "../component/button/button-download.twig" %}
+    {% set path_code = '../../component/button/button-download.twig' %}
+    {% set collapse_id = '05' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

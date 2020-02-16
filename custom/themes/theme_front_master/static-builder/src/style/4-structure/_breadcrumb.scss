@@ -1,0 +1,47 @@
+// ** Breadcrumb **
+
+// <nav class="breadcrumb-wrapper" role="navigation" aria-label="breadcrumb">
+//   <ol class="breadcrumb">
+//     <li class="breadcrumb-item"><a href="#">Home</a></li>
+//     <li class="breadcrumb-item"><a href="#">Library</a></li>
+//     <li class="breadcrumb-item active" aria-current="page">Data</li>
+//   </ol>
+// </nav>
+
+.breadcrumb-wrapper {
+    background-color: $breadcrumb-bg;
+}
+
+.breadcrumb {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.breadcrumb-item {
+    & + .breadcrumb-item {
+        @include icon(before, icon-arrow-right) {
+            font-size: 0.7rem;
+            color: $breadcrumb-divider-color;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        @include hover-focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+//
+// MEDIA QUERIES
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+@include media-breakpoint-down(sm) {
+    .breadcrumb-wrapper {
+        display: none;
+    }
+}

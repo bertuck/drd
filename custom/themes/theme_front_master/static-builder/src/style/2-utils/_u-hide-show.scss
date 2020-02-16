@@ -1,0 +1,11 @@
+.show{ display: block; }
+
+[hidden],
+.hide,
+.hidden,
+.js-hide {
+    display: none !important;
+}
+
+.invisible{ visibility: hidden; }
+.visible{ visibility: visible; }

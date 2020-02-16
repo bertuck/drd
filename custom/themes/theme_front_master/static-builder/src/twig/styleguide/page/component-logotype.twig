@@ -1,0 +1,18 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Logotype' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Logotype</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% include "../component/logotype/logotype.twig" %}
+
+    {% set path_code = '../../component/logotype/logotype.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

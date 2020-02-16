@@ -1,0 +1,65 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Table Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Table</h2>
+{% endblock %}
+
+{% block main %}
+
+    <h2 class="sg-title">Table</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                Pour toutes questions sur l'accessibilité des tableaux
+                <br>
+                Une bonne ressource à lire : <a href="https://www.accede-web.com/notices/html-css-javascript/9-tableaux/" target="_blank">Les notices AcceDe Web : Les tableaux</a>
+            </p>
+            <p>
+                Un tableau doit avoir un titre via la balise <code>&lt;caption&gt;</code>
+                <br>
+                La balise <code>&lt;caption&gt;</code> doit toujours suivre la balise <code>&lt;table&gt;</code>
+                <br>
+                Si celle-ci pose souci en créa, elle veut prendre la class <code>.sr-only</code> pour être masquée de façon accessible
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/table/table.twig" %}
+    {% set path_code = '../../component/table/table.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Table recap</h2>
+    {% include "../component/table/table-recap.twig" %}
+    {% set path_code = '../../component/table/table-recap.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title" id="table-into-cards">Table into cards</h2>
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>Le nom de chaque dossier est lié avec un <code>aria-describedby</code> à l'ID du statut du dossier.</p>
+            <p>Pour chaque bouton avec icône, il faut ajouter un <code>title</code> et un <code>span.sr-only</code> précisant son action et rappeler le nom du dossier.</p>
+            <p>
+                Ce tableau doit être masqué en mobile. On utilise le composant <a href="component-block.html#Block-create-account-item-card-table">Block create account item card table</a> à la place.
+            <br>En situation sur la page <a href="51.html">51.mon suivi_professionnel</a>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/table/table-into-cards.twig" %}
+    {% set path_code = '../../component/table/table-into-cards.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

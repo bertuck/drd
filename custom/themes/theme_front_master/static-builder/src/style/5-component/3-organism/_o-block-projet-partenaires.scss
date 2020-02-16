@@ -1,0 +1,33 @@
+.o-block-projet-partenaires {
+    padding-bottom: $landing-section-spacing-y;
+}
+
+.o-block-projet-title {
+    @include legend-style();
+}
+
+.o-block-projet-partenaires-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    div{
+        display: inline-block;
+    }
+    .logo-partenaire {
+        padding: 1rem;
+
+        img {
+            width: auto;
+            height: auto;
+            max-width: 17.6rem;
+            max-height: 14.1rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .o-block-projet-partenaires {
+        padding-bottom: $landing-section-spacing-y-md;
+    }
+}

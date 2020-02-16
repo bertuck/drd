@@ -1,0 +1,178 @@
+/* ALERT STYLES
+   ----------------------------- */
+.container-loading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .loading {
+    font-size: 10px;
+    margin: 50px auto;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .loading:before {
+    width: 50%;
+    height: 50%;
+    background: #ffffff;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+  .loading:after {
+    background: #e8e8ee;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  @-webkit-keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.alert {
+  border: 0;
+  padding: 11px;
+  margin-bottom: 2.6rem;
+  .alert-heading {
+    font-size: 1.95rem;
+    margin-bottom: 0.9rem;
+    margin-top: 0.6rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  &.alert-primary {
+    color: $alertTextColorPrimary;
+    background-color: $alertBgColorPrimary;
+
+    .close {
+      color: $alertTextColorPrimary;
+      opacity: 1;
+      text-shadow: 0px 1px 0px darken($alertBgColorPrimary, 7);
+    }
+
+    a {
+      color: $alertTextColorPrimary;
+      text-decoration: underline;
+    }
+  }
+
+  &.alert-info {
+    color: $alertTextColorInfo;
+    background-color: $alertBgColorInfo;
+
+    .close {
+      color: $alertTextColorInfo;
+      opacity: 1;
+      text-shadow: 0px 1px 0px darken($alertBgColorInfo, 7);
+    }
+
+    a {
+      color: $alertTextColorInfo;
+      text-decoration: underline;
+    }
+  }
+
+  &.alert-warning {
+    color: $alertTextColorWarning;
+    background-color: $alertBgColorWarning;
+
+    .close {
+      color: $alertTextColorWarning;
+      opacity: 1;
+      text-shadow: 0px 1px 0px darken($alertBgColorWarning, 7);
+    }
+
+    a {
+      color: $alertTextColorWarning;
+      text-decoration: underline;
+    }
+  }
+  &.alert-success {
+    color: $alertTextColorSuccess;
+    background-color: $alertBgColorSuccess;
+
+    .close {
+      color: $alertTextColorSuccess;
+      opacity: 1;
+      text-shadow: 0px 1px 0px darken($alertBgColorSuccess, 7);
+    }
+
+    a {
+      color: $alertTextColorSuccess;
+      text-decoration: underline;
+    }
+  }
+  &.alert-danger {
+    color: $alertTextColorDanger;
+    background-color: $alertBgColorDanger;
+
+    .close {
+      color: $alertTextColorDanger;
+      opacity: 1;
+      text-shadow: 0px 1px 0px darken($alertBgColorDanger, 7);
+    }
+
+    a {
+      color: $alertTextColorDanger;
+      text-decoration: underline;
+    }
+  }
+
+  .close {
+    top: 0;
+  }
+}
+
+//page alert
+.page-level-alert {
+  margin-bottom: 0;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}

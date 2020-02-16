@@ -1,0 +1,30 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Modal Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Modal</h2>
+{% endblock %}
+
+{% block main %}
+
+    <h2 class="sg-title">Modal</h2>
+    {% include "../component/modal/modal.twig" %}
+    {% set path_code = '../../component/modal/modal.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Modal code confidentiel</h2>
+    {% include "../component/modal/modal-code-confidentiel.twig" %}
+    {% set path_code = '../../component/modal/modal-code-confidentiel.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Modal ajouter un nouveau document</h2>
+    {% include "../component/modal/modal-add-document.twig" %}
+    {% set path_code = '../../component/modal/modal-add-document.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

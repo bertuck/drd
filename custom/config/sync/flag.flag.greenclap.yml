@@ -1,0 +1,32 @@
+uuid: 95c9c8d6-d2e0-42d3-a122-25e6500baa74
+langcode: fr
+status: true
+dependencies:
+  module:
+    - flag_count
+    - node
+id: greenclap
+label: GreenClap
+bundles:
+  - article
+  - news
+entity_type: node
+global: false
+weight: 0
+flag_short: 'Green clap'
+flag_long: ''
+flag_message: ''
+unflag_short: Unclap
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+flag_type: 'entity:node'
+link_type: count_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

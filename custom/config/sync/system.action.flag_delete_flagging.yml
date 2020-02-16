@@ -1,0 +1,13 @@
+uuid: 32ec94d3-4346-4a2a-951e-87217a21a003
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+_core:
+  default_config_hash: Z9dGFmjyQgZjDwdsI-Mmgd2tZkUsjYi7cOSUPqjXPtw
+id: flag_delete_flagging
+label: 'Delete flagging'
+type: flagging
+plugin: flag_delete_flagging
+configuration: {  }

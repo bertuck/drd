@@ -1,0 +1,16 @@
+ARG REGISTRY
+ARG APP_NAMESPACE
+
+# Development environment from php-base image
+FROM ${REGISTRY}/${APP_NAMESPACE}/php-base
+# Custom specifications for development environment
+## Add local user
+ARG USER_UID
+ARG USER_NAME
+RUN set -eux \
+ && yum -y install sudo && yum clean all \
+ && echo "${USER_NAME} ALL=(ALL) NOPASSWD:  ALL" > /etc/sudoers.d/localuser
+
+
+ENV USER_NAME ${USER_NAME}
+USER ${USER_NAME}

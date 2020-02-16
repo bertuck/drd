@@ -1,0 +1,34 @@
+//  *
+//  * Egal text-indent for accessibility.
+//  *
+//  * @mixin
+//  * @section A11y
+//  * @example
+//  *  @include access-hidden();
+//  *
+@mixin access-hidden () {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+
+    clip: rect(1px, 1px, 1px, 1px);
+
+    &::before,
+    &::after
+    {
+    display: none;
+    }
+}
+
+@mixin access-hidden--reset () {
+    position: relative !important;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    border: inherit;
+
+    clip: auto;
+}

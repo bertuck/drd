@@ -1,0 +1,49 @@
+// var-custom.scss -- Variables for project
+//
+
+$font-family-museo: Museo, Arial, sans-serif;
+
+// COLOR ACCESSIBLE
+$blue-access: #000080;
+$yellow-access: #FFFF00;
+
+$brand-twitter: #1da1f2;
+$brand-facebook: #3b5998;
+$brand-linkedin: #0077b5;
+
+// Region top
+$sticky-top-height: 8.1rem;
+$sticky-top-height-lg: 15.5rem;
+
+$sticky-top-home-height: 8.1rem;
+$sticky-top-home-height-lg: 14rem;
+
+// Header
+$header-padding-x: 0;
+$header-padding-y: 1.5rem;
+$header-padding-x-large: 0;
+$header-padding-y-large: 3rem;
+$header-pos-x-large: 1.5rem;
+$header-pos-y-large: 0;
+
+$burger-width: 4.7rem;
+
+$logo-width-large: 11.3rem;
+
+// Home
+$home-title-height: 7rem;
+$landing-section-spacing-y: 3rem;
+$landing-section-spacing-y-md: 5rem;
+$landing-section-spacing-y-xl: 8rem;
+
+// Footer
+$footer-padding-x: 0;
+$footer-padding-y: 1.5rem;
+$footer-padding-x-large: 0;
+$footer-padding-y-large: 2.5rem;
+
+// Forms
+$label-font-size: 1.4rem;
+
+// Misc
+$o-block-actualites-article-margin-bottom: 3rem;

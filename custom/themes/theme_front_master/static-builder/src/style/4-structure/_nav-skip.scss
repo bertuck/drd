@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// nav-skip.scss -- Skip navigation A11y
+//
+
+.nav-skip
+{
+    @include clearAfter;
+
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 101;
+
+    width: 20rem;
+
+    a, button
+    {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+
+        display: block;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        background-color: $white;
+
+        color: $black;
+        font-size: 1.6rem;
+        text-align: center;
+        text-decoration: none;
+
+        &:focus,
+        &:hover,
+        &:active
+        {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+
+            height: auto;
+        }
+
+        &:focus
+        {
+            outline-offset: -0.3rem;
+        }
+    }
+
+    // &.--visible
+    // {
+    //     height: auto;
+    // }
+}

@@ -1,0 +1,32 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Progress bar Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Popover</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <h3 class="mb-2">Accessibilité</h3>
+            <p>
+                <a href="https://www.w3.org/TR/wai-aria-1.1/#progressbar" target="_blank">https://www.w3.org/TR/wai-aria-1.1/#progressbar</a>
+                <br>
+                <a href="http://disic.github.io/rgaa_composants_javascript/#progressbar" target="_blank">http://disic.github.io/rgaa_composants_javascript/#progressbar</a>
+            </p>
+            <p>Quand le chargement progresse, il faut mettre à jour <code>aria-valuenow</code> + la valeur du pourcentage dans la <code>div.progress-nb</code> + le style inline qui fait avancer visuellement la progress bar.</p>
+        {% endblock %}
+    {% endembed %}
+
+    {% include "../component/progress/progress.twig" %}
+
+    {% set path_code = '../../component/progress/progress.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

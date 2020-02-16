@@ -1,0 +1,22 @@
+uuid: c256de0e-3b84-423f-b193-d6f73ae36d02
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_front_master
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: theme_front_master_content
+theme: theme_front_master
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

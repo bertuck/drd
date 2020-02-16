@@ -1,0 +1,89 @@
+// Mixins spécifiques au projet
+@mixin title-strike-through($bg-color: $gray-100, $color: $gray-600) {
+    margin-bottom: 0;
+    font-size: 2.6rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: $color;
+
+    border-top: solid 0.1rem rgba($color, 0.27);
+
+    > span {
+        display: inline-block;
+        padding: 1rem 2rem;
+
+        background-color: $bg-color;
+
+        transform: translate(0, -50%);
+    }
+}
+
+@mixin legend-style() {
+    margin-bottom: 2rem;
+
+    font-size: 1.8rem;
+    font-family: $font-family-museo;
+    line-height: normal;
+    text-transform: uppercase;
+
+    color: $primary;
+}
+
+@mixin title-landing-style() {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(md) {
+        font-size: 3rem;
+    }
+}
+
+@mixin dropdown-arrow() {
+    position: relative;
+    padding-right: 3rem;
+
+    @include icon(before, icon-arrow-down) {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translate(0, -50%);
+
+        transition: transform 250ms ease;
+    }
+
+    &[aria-expanded="true"] {
+        &::before {
+            transform: translate(0, -50%) rotate(180deg);
+        }
+    }
+}
+
+@mixin external-link() {
+    @include icon(after, icon-external-link) {
+        display: inline-block;
+        margin-left: 0.7rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+    }
+}
+
+@mixin dotted-marker() {
+    &::after {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        bottom: -1rem;
+        left: 0;
+
+        display: block;
+        margin: auto;
+        width: 5.5rem;
+        height: 1rem;
+
+        background-color: currentColor;
+        border-radius: 0 0 1rem 1rem;
+    }
+}

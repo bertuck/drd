@@ -1,0 +1,43 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Input Group Component' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">input group</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% embed "../layout/callout.twig" with {
+        callout_type: "sg-callout-warning"
+    } %}
+        {% block sg_callout_content %}
+            <p>
+                <a href="https://getbootstrap.com/docs/4.1/components/input-group/#button-addons" target="_blank">Bootstrap input group</a>
+            </p>
+        {% endblock %}
+    {% endembed %}
+
+    <h2 class="sg-title">Input group</h2>
+    {% include "../component/input-group/input-group.twig" %}
+    {% set path_code = '../../component/input-group/input-group.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <form>
+        {% include "../component/input-group/input-group-2.twig" %}
+    </form>
+    {% set path_code = '../../component/input-group/input-group-2.twig' %}
+    {% set collapse_id = '01' %}
+    {% include "../layout/code/collapse.twig" %}
+
+    <h2 class="sg-title">Input group search</h2>
+    <form>
+        {% include "../component/input-group/input-group-search.twig" %}
+    </form>
+    {% set path_code = '../../component/input-group/input-group-search.twig' %}
+    {% set collapse_id = '02' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

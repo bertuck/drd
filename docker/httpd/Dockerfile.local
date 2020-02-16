@@ -1,0 +1,6 @@
+ARG REGISTRY
+ARG APP_NAMESPACE
+
+# Development environment from httpd-base image
+FROM ${REGISTRY}/${APP_NAMESPACE}/httpd-base
+# Custom specifications for development environment

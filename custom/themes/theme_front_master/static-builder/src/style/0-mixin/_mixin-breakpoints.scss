@@ -1,0 +1,78 @@
+// /**
+//  * Viewport breakpoints.
+//  *
+//  * @mixin
+//  * @section Breakpoint
+//  * @example
+//  *  @include tablet { ... }
+//  */
+
+// 0 > 767 px ...
+@mixin mobile {
+    @media only screen and (min-width: 0em) and (max-width: 47.938em) {
+        @content;
+    }
+}
+
+// > 576 px ...
+@mixin mobile-2 {
+    @media only screen and (min-width: 36em) {
+        @content;
+    }
+}
+
+// > 768 px ...
+@mixin tablet {
+    @media only screen and (min-width: 48em) {
+        @content;
+    }
+}
+
+// > 768 px > 991px
+@mixin tablet-and-desktop-m {
+    @media only screen and (min-width: 48em) and (max-width: 61.938em) {
+        @content;
+    }
+}
+
+// > 768 px > 1024px
+@mixin tablet-and-desktop {
+    @media only screen and (min-width: 48em) and (max-width: 64.000em) {
+        @content;
+    }
+}
+
+// > 992 px ...
+@mixin desktop-m {
+    @media only screen and (min-width: 62em) {
+        @content;
+    }
+}
+
+// > 1024 px ...
+@mixin desktop {
+    @media only screen and (min-width: 64em) {
+        @content;
+    }
+}
+
+// > 1200 px ...
+@mixin desktop-xl {
+    @media only screen and (min-width: 75em) {
+        @content;
+    }
+}
+
+// > 1280 px ...
+@mixin desktop-xxl {
+    @media only screen and (min-width: 80em) {
+        @content;
+    }
+}
+
+// > 1400 px ...
+@mixin desktop-xxxl {
+    @media only screen and (min-width: 87.500em) {
+        @content;
+    }
+}

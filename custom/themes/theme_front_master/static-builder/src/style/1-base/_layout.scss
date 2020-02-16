@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+// layouts.scss -- Page layouts for project
+//
+
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    position: relative;
+    overflow-x: hidden;
+
+    background-color: $white;
+
+    &.overflow
+    {
+        overflow: hidden;
+    }
+}
+
+.main
+{
+    position: relative;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 140rem;
+    width: 83.3333333333%;
+}
+
+// .container {
+//     margin-right: auto;
+//     margin-left: auto;
+    
+//     padding-right: $gutter;
+//     padding-left: $gutter;
+
+//     width: 100%;
+
+//     // 768
+//     @include tablet {
+//         max-width: 720px;
+//     }
+
+//     // 992
+//     @include desktop-m {
+//         max-width: 960px;
+//     }
+
+//     // 1200
+//     @include desktop-xl {
+//         max-width: 1140px;
+//     }
+// }
+  
+// .container-fluid {
+//     margin-right: auto;
+//     margin-left: auto;
+
+//     padding-right: $gutter;
+//     padding-left: $gutter;
+    
+//     width: 100%;
+// }

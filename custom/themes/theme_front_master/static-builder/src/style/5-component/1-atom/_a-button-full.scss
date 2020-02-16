@@ -1,0 +1,186 @@
+/*
+
+** ATOM - Button Full Background **
+
+*/
+
+.btn-primary
+{
+    border-color: $primary-color;
+    background-color: $primary-color;
+
+    @include hover
+    {
+        background-color: $white;
+        color: $primary-color;
+    }
+
+    @include active
+    {
+        border-color: darken($primary-color, 40%);
+        background-color: darken($primary-color, 40%);
+        color: $white;
+    }
+}
+
+.btn-secondary
+{
+    border-color: $secondary-color;
+    background-color: $secondary-color;
+    color: $primary-color;
+
+    @include hover
+    {
+        border-color: $access-color;
+        background-color: $white;
+    }
+
+    @include active
+    {
+        border-color: darken($access-color, 20%);
+        background-color: darken($access-color, 20%);
+        color: $white;
+    }
+}
+
+.btn-success
+{
+    border-color: $success-color;
+    background-color: $success-color;
+
+    @include hover
+    {
+        border-color: $success-color;
+        background-color: $white;
+        color: $success-color;
+    }
+
+    @include active
+    {
+        border-color: darken($success-color, 10%);
+        background-color: darken($success-color, 10%);
+        color: $white;
+    }
+}
+
+.btn-link
+{
+    border-color: $access-color;
+    background-color: $white;
+    color: $access-color;
+
+    @include hover
+    {
+        border-color: darken($access-color, 10%);
+        background-color: $white;
+        color: darken($access-color, 10%);
+    }
+
+    @include active
+    {
+        border-color: darken($access-color, 30%);
+        background-color: darken($access-color, 30%);
+        color: $white;
+    }
+}
+
+.btn-info,
+.btn-default
+{
+    border-color: $access-color;
+    background-color: $access-color;
+
+    @include hover
+    {
+        border-color: $access-color;
+        background-color: $white;
+        color: $access-color;
+    }
+
+    @include active
+    {
+        border-color: darken($access-color, 20%);
+        background-color: darken($access-color, 20%);
+        color: $white;
+    }
+}
+
+.btn-warning
+{
+    border-color: $warning-color;
+    background-color: $warning-color;
+
+    @include hover
+    {
+        border-color: $warning-color;
+        background-color: $white;
+        color: $warning-color;
+    }
+
+    @include active
+    {
+        border-color: darken($warning-color, 20%);
+        background-color: darken($warning-color, 20%);
+        color: $white;
+    }
+}
+
+.btn-danger
+{
+    border-color: $alert-color;
+    background-color: $alert-color;
+
+    @include hover
+    {
+        border-color: $alert-color;
+        background-color: $white;
+        color: $alert-color;
+    }
+
+    @include active
+    {
+        border-color: darken($alert-color, 20%);
+        background-color: darken($alert-color, 20%);
+        color: $white;
+    }
+}
+
+.btn-light
+{
+    border-color: $gray-200;
+    background-color: $gray-200;
+
+    @include hover
+    {
+        border-color: $gray-200;
+        background-color: $white;
+        color: $gray-200;
+    }
+
+    @include active
+    {
+        border-color: darken($gray-200, 20%);
+        background-color: darken($gray-200, 20%);
+        color: $white;
+    }
+}
+
+.btn-dark
+{
+    border-color: $gray-500;
+    background-color: $gray-500;
+
+    @include hover
+    {
+        border-color: $gray-500;
+        background-color: $white;
+        color: $gray-500;
+    }
+
+    @include active
+    {
+        border-color: darken($gray-500, 20%);
+        background-color: darken($gray-500, 20%);
+        color: $white;
+    }
+}

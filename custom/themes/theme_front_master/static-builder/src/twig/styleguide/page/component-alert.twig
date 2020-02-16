@@ -1,0 +1,18 @@
+{% extends "../../_layout-styleguide.twig" %}
+
+{% set title = 'Alert' %}
+{% set bodyclass = 'sg-body-wrapper' %}
+
+{% block sg_main_title %}
+    <h2 class="sg-title">Alert</h2>
+{% endblock %}
+
+{% block main %}
+
+    {% include "../component/alert/alert.twig" %}
+
+    {% set path_code = '../../component/alert/alert.twig' %}
+    {% set collapse_id = '00' %}
+    {% include "../layout/code/collapse.twig" %}
+
+{% endblock %}

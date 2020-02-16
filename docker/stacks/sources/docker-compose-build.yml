@@ -1,0 +1,14 @@
+version: "3.6"
+
+services:
+  sources:
+    image: "${REGISTRY}/${APP_NAMESPACE}/sources:${CI_COMMIT_REF_NAME}"
+    build:
+      context: ../../../
+      dockerfile: docker/sources/Dockerfile
+      args:
+        REGISTRY: ${REGISTRY}
+        APP_NAMESPACE: ${APP_NAMESPACE}
+        BRANCH: ${CI_COMMIT_REF_NAME}
+    depends_on:
+      - php-base

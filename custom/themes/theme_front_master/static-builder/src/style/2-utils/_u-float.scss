@@ -1,0 +1,58 @@
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.float-none { float: none !important; }
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// MEDIA QUERIE
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+@include mobile-2 
+{
+    .float-sm-left { float: left !important; }
+    .float-sm-right { float: right !important; }
+    .float-sm-none { float: none !important; }
+}
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// MEDIA QUERIE
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+@include tablet 
+{
+    .float-md-left { float: left !important; }
+    .float-md-right { float: right !important; }
+    .float-md-none { float: none !important; }
+}
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// MEDIA QUERIE
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+@include desktop-m 
+{
+    .float-lg-left { float: left !important; }
+    .float-lg-right { float: right !important; }
+    .float-lg-none { float: none !important; }
+}
+
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+//
+// MEDIA QUERIE
+//
+// + + + + + + + + + + + + + + + + + + + + + + + + + + + + 
+
+@include desktop-xl 
+{
+    .float-xl-left { float: left !important; }
+    .float-xl-right { float: right !important; }
+    .float-xl-none { float: none !important; }
+}

@@ -1,0 +1,43 @@
+/* PAGINATION STYLES
+   ----------------------------- */
+
+
+.pagination {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  > li {
+    > a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+      @include buttonBorder(#d5dce6);
+      @include buttonGradient(#ffffff, $btnColorDefault);
+
+      &:active,
+      &:focus,
+      &:hover {
+        @include buttonGradient(#ffffff, #e5e8ef);
+      }
+    }
+  }
+
+  li {
+    &.active {
+      a {
+        border-color: $paginationActiveColor;
+      }
+    }
+  }
+}
+
+.pager {
+  li {
+    a {
+      @include defaultButtonStyle;
+    }
+  }
+}
