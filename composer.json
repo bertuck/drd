@@ -19,7 +19,7 @@
         "composer/installers": "^1.5",
         "oomphinc/composer-installers-extender": "^1.1",
         "cweagans/composer-patches": "^1.6",
-        "phpoffice/phpspreadsheet": "1.6.0",
+        "phpoffice/phpspreadsheet": "1.8.0",
         "twig/extensions": "^1.4",
         "solarium/solarium": "~5.0.3|~5.1.4",
         "drupal-composer/drupal-scaffold": "^2.0",
